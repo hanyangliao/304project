@@ -1,0 +1,2877 @@
+*******************************************************************
+*  Stata "do-file" file with labels and missing data specifications
+*  Created by ddltox on Oct 15, 2020  (Thu 10:53 PM EDT)
+*  DDL source file: "/web/sda.artsci.utoronto.ca/htdocs/sdaweb/tmpdir/AAutL3PJ.txt".
+*
+*  Note that the data dictionary is given at the end of this file.
+*  Put the dictionary into a separate file (by editing this file).
+*  Then specify below the name of the dictionary file.
+*
+*  DDL file gives the following dataset description:
+*    Records per case: 1
+*    Record length:    7978
+*******************************************************************
+
+
+label data "General social survey, cycle 25, 2011: family"
+
+#delimit ;
+label define agec      80 "80 years and over" ;
+label define agedc     80.0 "80 years and over" ;
+label define agegr5    1 "15 to 17" 2 "18 to 19" 3 "20 to 24" 4 "25 to 29" 
+                       5 "30 to 34" 6 "35 to 39" 7 "40 to 44" 8 "45 to 49" 
+                       9 "50 to 54" 10 "55 to 59" 11 "60 to 64" 12 "65 to 69" 
+                       13 "70 to 74" 14 "75 to 79" 15 "80 years and over" ;
+label define agegr10   1 "15 to 24" 2 "25 to 34" 3 "35 to 44" 4 "45 to 54" 
+                       5 "55 to 64" 6 "65 to 74" 7 "75 years and over" ;
+label define sex       1 "Male" 2 "Female" ;
+label define marstat   1 "Married" 2 "Living common-law" 3 "Widowed" 
+                       4 "Separated" 5 "Divorced" 6 "Single (Never married)" 
+                       8 "Not stated" 9 "Don't know" ;
+label define sexpr     0 "Respondent has no partner in the household" 
+                       1 "Respondent has a male partner in the household" 
+                       2 "Respondent has a female partner in the household" ;
+label define prtypec   0 "Respondent has no spouse/partner in the household" 
+                       1 "Respondent has an opposite sex married spouse in the household" 
+                       2 "Respondent has an opposite sex common-law partner in the household" 
+                       3 "Respondent has a same sex spouse/partner in the household" ;
+label define chrinhsdc 0 "None" 1 "One" 2 "Two" 3 "Three" 
+                       4 "Four or more children" ;
+label define chrtime6  1 "No child under 19 years of age at home" 
+                       2 "All children under 5 years of age" 
+                       3 "All children between 5 and 12 years of age" 
+                       4 "All children 13 years of age or older" 
+                       5 "At least one child under 5 years of age, but not all children" 
+                       6 "Other" ;
+label define parhsdc   1 "Two biological parents" 
+                       2 "Two parents (biological/adoptive/step)" 
+                       3 "Only one parent" 7 "No parent in the household" ;
+label define prtchd_1c 1 "Both birth parents in household" 
+                       2 "Both adopted parents in household" 
+                       3 "One birth and one adoptive parent" 
+                       4 "One birth and one step-parent /One adoptive parent and one step-parent" 
+                       5 "Only one biological parent" 
+                       6 "Only one adoptive parent" 7 "Only one step-parent" 
+                       8 "Two step-parents" 9 "Other" 97 "Not asked" 
+                       98 "Not stated" 99 "Don't know" ;
+label define prtchd_2c 1 "Both birth parents in household" 
+                       2 "Both adopted parents in household" 
+                       3 "One birth and one adoptive parent" 
+                       4 "One birth and one step-parent /One adoptive parent and one step-parent" 
+                       5 "Only one biological parent" 
+                       6 "Only one adoptive parent" 7 "Only one step-parent" 
+                       8 "Two step-parents" 9 "Other" 97 "Not asked" 
+                       98 "Not stated" 99 "Don't know" ;
+label define prtchd_3c 1 "Both birth parents in household" 
+                       2 "Both adopted parents in household" 
+                       3 "One birth and one adoptive parent" 
+                       4 "One birth and one step-parent /One adoptive parent and one step-parent" 
+                       5 "Only one biological parent" 
+                       6 "Only one adoptive parent" 7 "Only one step-parent" 
+                       8 "Two step-parents" 9 "Other" 97 "Not asked" 
+                       98 "Not stated" 99 "Don't know" ;
+label define prtchd_4c 1 "Both birth parents in household" 
+                       2 "Both adopted parents in household" 
+                       3 "One birth and one adoptive parent" 
+                       4 "One birth and one step-parent /One adoptive parent and one step-parent" 
+                       5 "Only one biological parent" 
+                       6 "Only one adoptive parent" 7 "Only one step-parent" 
+                       8 "Two step-parents" 9 "Other" 97 "Not asked" 
+                       98 "Not stated" 99 "Don't know" ;
+label define prtchd_5c 1 "Both birth parents in household" 
+                       2 "Both adopted parents in household" 
+                       3 "One birth and one adoptive parent" 
+                       4 "One birth and one step-parent /One adoptive parent and one step-parent" 
+                       5 "Only one biological parent" 
+                       6 "Only one adoptive parent" 7 "Only one step-parent" 
+                       8 "Two step-parents" 9 "Other" 97 "Not asked" 
+                       98 "Not stated" 99 "Don't know" ;
+label define prtchd_6c 1 "Both birth parents in household" 
+                       2 "Both adopted parents in household" 
+                       3 "One birth and one adoptive parent" 
+                       4 "One birth and one step-parent /One adoptive parent and one step-parent" 
+                       5 "Only one biological parent" 
+                       6 "Only one adoptive parent" 7 "Only one step-parent" 
+                       8 "Two step-parents" 9 "Other" 97 "Not asked" 
+                       98 "Not stated" 99 "Don't know" ;
+label define prtchd_7c 1 "Both birth parents in household" 
+                       2 "Both adopted parents in household" 
+                       3 "One birth and one adoptive parent" 
+                       4 "One birth and one step-parent /One adoptive parent and one step-parent" 
+                       5 "Only one biological parent" 
+                       6 "Only one adoptive parent" 7 "Only one step-parent" 
+                       8 "Two step-parents" 9 "Other" 97 "Not asked" 
+                       98 "Not stated" 99 "Don't know" ;
+label define livarr08  1 "Under 25 years of age not living with parents" 
+                       2 "Under 25 years of age living with both parents" 
+                       3 "Under 25 years of age living with mother only" 
+                       4 "Under 25 years of age living with father only" 
+                       5 "25 years of age or older not living with parents" 
+                       6 "25 years of age or older living with both parents" 
+                       7 "25 years of age or older living with mother only" 
+                       8 "25 years of age or older living with father only" ;
+label define livarr12  1 "Alone" 2 "Spouse only" 
+                       3 "Spouse and single child < 25 years of age" 
+                       4 "Spouse and single child 25 years of age or older" 
+                       5 "Spouse and non-single child(ren)" 
+                       6 "Spouse and other" 
+                       7 "No spouse and single child < 25 years of age" 
+                       8 "No spouse and single child 25 years of age or older" 
+                       9 "No spouse and non-single child(ren)" 
+                       10 "Living with 2 parents" 11 "Living with 1 parent" 
+                       12 "Other living arrangement" ;
+label define hsdsizec  1 "One household member" 2 "Two household members" 
+                       3 "Three household members" 4 "Four household members" 
+                       5 "Five household members" 
+                       6 "Six household members or more" ;
+label define famtype   1 "Couple only" 2 "Intact family" 
+                       3 "Step-family with common child" 
+                       4 "Step-family without a common child" 
+                       5 "Lone parent family" 
+                       7 "No spouse/partner or children in household" ;
+label define multigenc 1 "Yes" 2 "No" 6 "Number of generations unknown" ;
+label define chh0014c  0 "None" 1 "One" 2 "Two" 3 "Three or more children" ;
+label define prv       10 "Newfoundland and Labrador" 
+                       11 "Prince Edward Island" 12 "Nova Scotia" 
+                       13 "New Brunswick" 24 "Quebec" 35 "Ontario" 
+                       46 "Manitoba" 47 "Saskatchewan" 48 "Alberta" 
+                       59 "British Columbia" ;
+label define region    1 "Atlantic region" 2 "Quebec" 3 "Ontario" 
+                       4 "Prairie region" 5 "British Columbia" ;
+label define luc_rst   1 "Larger urban population centres (CMA/CA)" 
+                       2 "Rural areas and small population centres (non-CMA/CA)" 
+                       3 "Prince Edward Island" ;
+label define gu_q110   1 "Yes (both birth parents)" 
+                       2 "Yes (adoptive parents at birth)" 3 "No" 
+                       8 "Not stated" 9 "Don't know" ;
+label define gu_q120   1 "Yes" 2 "No" 7 "Not asked" 8 "Not stated" 
+                       9 "Don't know" ;
+label define gu_q130c  1 "Yes (birth mother or adoptive mother at birth)" 
+                       2 "No" 7 "Not asked" 8 "Not stated" 9 "Don't know" ;
+label define gu_q150c  1 "Yes (birth father or adoptive father at birth)" 
+                       2 "No" 7 "Not asked" 8 "Not stated" 9 "Don't know" ;
+label define gu_q170   1 "Yes" 2 "No" 8 "Not stated" 9 "Don't know" ;
+label define gu_q180   1 "Before" 2 "After" 
+                       3 "Both before and after (separated/divorced and re-partnered)" 
+                       7 "Not asked" 8 "Not stated" 9 "Don't know" ;
+label define gu_q190   1 "Married" 
+                       2 "Living together in a common-law relationship" 
+                       3 "Other" 7 "Not asked" 8 "Not stated" 9 "Don't know" ;
+label define gu_q210   1 "Yes" 2 "No" 8 "Not stated" 9 "Don't know" ;
+label define brthmcan  1 "Canada" 2 "Country outside Canada" 8 "Not stated" 
+                       9 "Don't know" ;
+label define edum5     1 "Doctorate/masters/bachelor's degree" 
+                       2 "Diplomacertificate from community college or trade/technical" 
+                       3 "Some university/community college" 
+                       4 "High school diploma" 
+                       5 "Some secondary/elementary/no schooling" 
+                       8 "Not stated" 9 "Don't know" ;
+label define edum10    
+                       1 "Doctorate/masters/degree in Medicine/Dentistry/Veterinary /Optometry" 
+                       2 "Bachelor or undergraduate degree/teachers college" 
+                       3 "Diploma or certificate from community college/ CEGEP/nursing" 
+                       4 "Diploma or certificate from trade, technical /vocational school/business college" 
+                       5 "Some university" 
+                       6 "Some community college/cegep/nursing" 
+                       7 "Some trade, technical /vocational school/business college" 
+                       8 "High school diploma" 9 "Some high school" 
+                       10 "Elementary school/no schooling" 98 "Not stated" 
+                       99 "Don't know" ;
+label define brthfcan  1 "Canada" 2 "Country outside Canada" 8 "Not stated" 
+                       9 "Don't know" ;
+label define eduf5     1 "Doctorate/masters/bachelor's degree" 
+                       2 "Diplomacertificate from community college or trade/technical" 
+                       3 "Some university/community college" 
+                       4 "High school diploma" 
+                       5 "Some secondary/elementary/no schooling" 
+                       8 "Not stated" 9 "Don't know" ;
+label define eduf10    
+                       1 "Doctorate/masters/degree in Medicine/Dentistry/Veterinary /Optometry" 
+                       2 "Bachelor or undergraduate degree/teachers college" 
+                       3 "Diploma or certificate from community college/ CEGEP/nursing school" 
+                       4 "Diploma or certificate from trade, technical /vocational school /business college" 
+                       5 "Some university" 
+                       6 "Some community college/cegep/nursing" 
+                       7 "Some trade, technical /vocational school/business college" 
+                       8 "High school diploma" 9 "Some high school" 
+                       10 "Elementary school/no schooling" 98 "Not stated" 
+                       99 "Don't know" ;
+label define lhh_q110  1 "Yes" 2 "No" 7 "Not asked" 8 "Not stated" 
+                       9 "Don't know" ;
+label define age_rethomlc 20.0 "Age 20 and less" 50.0 "Age 50 and over" 
+                       99.5 "Parent(s) joined respondent's household" 
+                       99.7 "Not asked" 99.8 "Not stated" 99.9 "Don't know" ;
+label define rea_rethoml_c01 1 "Yes" 2 "No" 7 "Not asked" 8 "Not stated" 
+                       9 "Don't know" ;
+label define rea_rethoml_c02 1 "Yes" 2 "No" 7 "Not asked" 8 "Not stated" 
+                       9 "Don't know" ;
+label define rea_rethoml_c03 1 "Yes" 2 "No" 7 "Not asked" 8 "Not stated" 
+                       9 "Don't know" ;
+label define rea_rethoml_c04 1 "Yes" 2 "No" 7 "Not asked" 8 "Not stated" 
+                       9 "Don't know" ;
+label define rea_rethoml_c05 1 "Yes" 2 "No" 7 "Not asked" 8 "Not stated" 
+                       9 "Don't know" ;
+label define rea_rethoml_c06 1 "Yes" 2 "No" 7 "Not asked" 8 "Not stated" 
+                       9 "Don't know" ;
+label define lhn_q110  1 "Yes" 2 "No" 3 "Respondent never left parents home" 
+                       7 "Not asked" 8 "Not stated" 9 "Don't know" ;
+label define no_lfthomc 0 "Never left home" 1 "One time" 2 "Two times" 
+                       3 "Three times" 4 "Four times" 5 "Five or more times" 
+                       8 "Not stated" 9 "Don't know" ;
+label define age_lfthomfc 15.0 "Age 15 and less" 35.0 "Age 35 and over" 
+                       99.7 "Not asked" 99.8 "Not stated" 99.9 "Don't know" ;
+label define rea_lfthomf_c01 1 "Yes" 2 "No" 7 "Not asked" 8 "Not stated" 
+                       9 "Don't know" ;
+label define rea_lfthomf_c02 1 "Yes" 2 "No" 7 "Not asked" 8 "Not stated" 
+                       9 "Don't know" ;
+label define rea_lfthomf_c03 1 "Yes" 2 "No" 7 "Not asked" 8 "Not stated" 
+                       9 "Don't know" ;
+label define rea_lfthomf_c04 1 "Yes" 2 "No" 7 "Not asked" 8 "Not stated" 
+                       9 "Don't know" ;
+label define rea_lfthomf_c05 1 "Yes" 2 "No" 7 "Not asked" 8 "Not stated" 
+                       9 "Don't know" ;
+label define rea_lfthomf_c06 1 "Yes" 2 "No" 7 "Not asked" 8 "Not stated" 
+                       9 "Don't know" ;
+label define rea_lfthomf_c07 1 "Yes" 2 "No" 7 "Not asked" 8 "Not stated" 
+                       9 "Don't know" ;
+label define rea_lfthomf_c08 1 "Yes" 2 "No" 7 "Not asked" 8 "Not stated" 
+                       9 "Don't know" ;
+label define age_rethomfc 15.0 "Age 15 and less" 30.0 "Age 30 and over" 
+                       99.7 "Not asked" 99.8 "Not stated" 99.9 "Don't know" ;
+label define rea_rethomf_c01 1 "Yes" 2 "No" 7 "Not asked" 8 "Not stated" 
+                       9 "Don't know" ;
+label define rea_rethomf_c02 1 "Yes" 2 "No" 7 "Not asked" 8 "Not stated" 
+                       9 "Don't know" ;
+label define rea_rethomf_c03 1 "Yes" 2 "No" 7 "Not asked" 8 "Not stated" 
+                       9 "Don't know" ;
+label define rea_rethomf_c04 1 "Yes" 2 "No" 7 "Not asked" 8 "Not stated" 
+                       9 "Don't know" ;
+label define rea_rethomf_c05 1 "Yes" 2 "No" 7 "Not asked" 8 "Not stated" 
+                       9 "Don't know" ;
+label define rea_rethomf_c06 1 "Yes" 2 "No" 7 "Not asked" 8 "Not stated" 
+                       9 "Don't know" ;
+label define age_lfthomlc 15.0 "Age 15 and over" 50.0 "Age 50 and over" 
+                       99.7 "Not asked" 99.8 "Not stated" 99.9 "Don't know" ;
+label define rea_lfthoml_c01 1 "Yes" 2 "No" 7 "Not asked" 8 "Not stated" 
+                       9 "Don't know" ;
+label define rea_lfthoml_c02 1 "Yes" 2 "No" 7 "Not asked" 8 "Not stated" 
+                       9 "Don't know" ;
+label define rea_lfthoml_c03 1 "Yes" 2 "No" 7 "Not asked" 8 "Not stated" 
+                       9 "Don't know" ;
+label define rea_lfthoml_c04 1 "Yes" 2 "No" 7 "Not asked" 8 "Not stated" 
+                       9 "Don't know" ;
+label define rea_lfthoml_c05 1 "Yes" 2 "No" 7 "Not asked" 8 "Not stated" 
+                       9 "Don't know" ;
+label define rea_lfthoml_c06 1 "Yes" 2 "No" 7 "Not asked" 8 "Not stated" 
+                       9 "Don't know" ;
+label define rea_lfthoml_c07 1 "Yes" 2 "No" 7 "Not asked" 8 "Not stated" 
+                       9 "Don't know" ;
+label define rea_lfthoml_c08 1 "Yes" 2 "No" 7 "Not asked" 8 "Not stated" 
+                       9 "Don't know" ;
+label define tot_union_c 0 "None" 1 "One union" 2 "Two unions" 3 "Three unions" 
+                       4 "Four unions" 5 "Five unions and over" ;
+label define no_marreverc 0 "No marriage" 1 "One" 2 "Two" 3 "Three" 
+                       4 "Four or more" ;
+label define no_marr_noclc 0 "No marriage" 1 "One marriage" 2 "Two marriages" 
+                       3 "Three or more marriages" ;
+label define no_cl_fomarrc 0 "No common-law union" 1 "One common-law union" 
+                       2 "Two common-law unions" 
+                       3 "Three or more common-law unions" ;
+label define leg_marstat 1 "Legally married and not separated" 
+                       2 "Legally married and separated" 3 "Divorced" 
+                       4 "Widowed" 5 "Never legally married (single)" 
+                       9 "Don't know" ;
+label define ever_cl   1 "Yes" 2 "No" 8 "Not stated" 9 "Don't know" ;
+label define ever_legmarr 1 "Yes" 2 "No" 8 "Not stated" 9 "Don't know" ;
+label define ma0_rankc 1 "First union" 2 "Second union" 3 "Third union" 
+                       4 "Fourth union or more" 97 "Not asked" 
+                       98 "Not stated" ;
+label define age_ma0c  15.0 "Age 15 and less" 60.0 "Age 60 or more" 
+                       99.7 "Not asked" 99.8 "Not stated" 99.9 "Don't know" ;
+label define ma0_q108  1 "Yes" 2 "No" 7 "Not asked" 8 "Not stated" 
+                       9 "Don't know" ;
+label define ma0_q120  1 "...widowed?" 2 "...divorced?" 
+                       3 "...never legally married (single)?" 7 "Not asked" 
+                       8 "Not stated" 9 "Don't know" ;
+label define agedifgr_ma0 1 "Respondent is 11 + years older" 
+                       2 "Respondent is 6 to 10 years older" 
+                       3 "Respondent is 5 years older" 
+                       4 "Respondent is 4 years older" 
+                       5 "Respondent is 3 years older" 
+                       6 "Respondent is 2 years older" 
+                       7 "Respondent is 1 year older" 
+                       8 "Respondent and spouse/partner are same age" 
+                       9 "Respondent is 1 year younger" 
+                       10 "Respondent is 2 years younger" 
+                       11 "Respondent is 3 years younger" 
+                       12 "Respondent is 4 years younger" 
+                       13 "Respondent is 5 years younger" 
+                       14 "Respondent is 6 to 10 years younger" 
+                       15 "Respondent is 11 + years younger" 
+                       97 "Not asked - no spouse/partner in household" 
+                       98 "Not stated" 99 "Don't know" ;
+label define age_sep_ma0c 20 "Age 20 or less" 60 "Age 60 or more" 
+                       99.7 "Not asked" 99.8 "Not stated" 99.9 "Don't know" ;
+label define no_chspoc 0 "None" 1 "One" 2 "Two" 3 "Three" 4 "Four" 
+                       5 "Five or more" 7 "Not asked" 8 "Not stated" 
+                       9 "Don't know" ;
+label define no_chu19spoc 0 "None" 1 "One" 2 "Two or more" 7 "Not asked" 
+                       9 "Don't know" ;
+label define ma0_q150  1 "Yes" 2 "No" 7 "Not asked" 8 "Not stated" 
+                       9 "Don't know" ;
+label define age_cl_ma0c 15.0 "Age 15 or less" 60.0 "Age 60 and over" 
+                       99.7 "Not asked" 99.8 "Not stated" 99.9 "Don't know" ;
+label define ma0_q220  1 "Yes" 2 "No" 7 "Not asked" 8 "Not stated" 
+                       9 "Don't know" ;
+label define ma1_rankc 1 "First union" 2 "Second union" 
+                       3 "Third union or more" 97 "Not asked" 98 "Not stated" ;
+label define age_ma1c  15.0 "Age 15 and less" 58.0 "Age 58 and over" 
+                       99.7 "Not asked" 99.8 "Not stated" 99.9 "Don't know" ;
+label define agedifgr_ma1 1 "Respondent is 11 + years older" 
+                       2 "Respondent is 6 to 10 years older" 
+                       3 "Respondent is 5 years older" 
+                       4 "Respondent is 4 years older" 
+                       5 "Respondent is 3 years older" 
+                       6 "Respondent is 2 years older" 
+                       7 "Respondent is 1 year older" 
+                       8 "Respondent and spouse/partner are same age" 
+                       9 "Respondent is 1 year younger" 
+                       10 "Respondent is 2 years younger" 
+                       11 "Respondent is 3 years younger" 
+                       12 "Respondent is 4 years younger" 
+                       13 "Respondent is 5 years younger" 
+                       14 "Respondent is 6 to 10 years younger" 
+                       15 "Respondent is 11 + years younger" 
+                       97 "Not asked - no spouse/partner in household" 
+                       98 "Not stated" 99 "Don't know" ;
+label define ma1_q150  1 "Yes" 2 "No" 7 "Not asked" 8 "Not stated" 
+                       9 "Don't know" ;
+label define age_cl_ma1c 15.0 "Age 15 and less" 42.0 "Age 42 and over" 
+                       99.7 "Not asked" 99.8 "Not stated" 99.9 "Don't know" ;
+label define ma1_q165  1 "Yes" 2 "No" 7 "Not asked" 8 "Not stated" 
+                       9 "Don't know" ;
+label define ma1_q170  1 "... separation and then divorce or annulment?" 
+                       2 "... separation and then death of spouse?" 
+                       3 "... death of spouse?" 
+                       4 "Divorce or annulment without separation?" 5 "Other" 
+                       7 "Not asked" 8 "Not stated" 9 "Don't know" ;
+label define age_sep_ma1c 18.0 "Age 18 or less" 60.0 "Age 60 or over" 
+                       99.7 "Not asked" 99.8 "Not stated" 99.9 "Don't know" ;
+label define age_div_ma1c 20.0 "Age 20 and less" 60.0 "Age 60 and over" 
+                       99.7 "Not asked" 99.8 "Not stated" 99.9 "Don't know" ;
+label define ma1_q220  1 "Yes" 2 "No" 7 "Not asked" 8 "Not stated" 
+                       9 "Don't know" ;
+label define ma1_q230  1 "Yes" 2 "No" 7 "Not asked" 8 "Not stated" 
+                       9 "Don't know" ;
+label define ma2_rankc 1 "First union" 2 "Second union" 3 "Third union" 
+                       4 "Fourth union or more" 97 "Not asked" 
+                       98 "Not stated" ;
+label define age_ma2c  20.0 "Age 20 and less" 60.0 "Age 60 and over" 
+                       99.7 "Not asked" 99.8 "Not stated" 99.9 "Don't know" ;
+label define agedifgr_ma2 1 "Respondent is 11 + years older" 
+                       2 "Respondent is 6 to 10 years older" 
+                       3 "Respondent is 5 years older" 
+                       4 "Respondent is 4 years older" 
+                       5 "Respondent is 3 years older" 
+                       6 "Respondent is 2 years older" 
+                       7 "Respondent is 1 year older" 
+                       8 "Respondent and spouse/partner are same age" 
+                       9 "Respondent is 1 year younger" 
+                       10 "Respondent is 2 years younger" 
+                       11 "Respondent is 3 years younger" 
+                       12 "Respondent is 4 years younger" 
+                       13 "Respondent is 5 years younger" 
+                       14 "Respondent is 6 to 10 years younger" 
+                       15 "Respondent is 11 + years younger" 
+                       97 "Not asked - no spouse/partner in household" 
+                       98 "Not stated" 99 "Don't know" ;
+label define ma2_q150  1 "Yes" 2 "No" 7 "Not asked" 8 "Not stated" 
+                       9 "Don't know" ;
+label define age_cl_ma2c 20.0 "Age 20 and less" 60.0 "Age 60 and over" 
+                       99.7 "Not asked" 99.8 "Not stated" 99.9 "Don't know" ;
+label define ma2_q165  1 "Yes" 2 "No" 7 "Not asked" 8 "Not stated" 
+                       9 "Don't know" ;
+label define ma2_q170  1 "... separation and then divorce or annulment?" 
+                       2 "... separation and then death of spouse?" 
+                       3 "... death of spouse?" 
+                       4 "Divorce or annulment without separation?" 5 "Other" 
+                       7 "Not asked" 8 "Not stated" 9 "Don't know" ;
+label define age_sep_ma2c 25.0 "Age 25 and less" 60.0 "Age 60 and over" 
+                       99.7 "Not asked" 99.8 "Not stated" 99.9 "Don't know" ;
+label define age_div_ma2c 27.0 "Age 27 and less" 60.0 "Age 60 and over" 
+                       99.7 "Not asked" 99.8 "Not stated" 99.9 "Don't know" ;
+label define ma2_q220  1 "Yes" 2 "No" 7 "Not asked" 8 "Not stated" 
+                       9 "Don't know" ;
+label define ma2_q230  1 "Yes" 2 "No" 7 "Not asked" 8 "Not stated" 
+                       9 "Don't know" ;
+label define ma3_rankc 1 "First union" 2 "Second union" 3 "Third union" 
+                       4 "Fourth union or more" 97 "Not asked" 
+                       98 "Not stated" ;
+label define age_ma3c  30.0 "Age 30 and less" 60.0 "Age 60 and more" 
+                       99.7 "Not asked" 99.8 "Not stated" 99.9 "Don't know" ;
+label define ma3_q150  1 "Yes" 2 "No" 7 "Not asked" 8 "Not stated" 
+                       9 "Don't know" ;
+label define age_cl_ma3c 30.0 "Age 30 and less" 50.0 "Age 50 and more" 
+                       99.7 "Not asked" 99.8 "Not stated" 99.9 "Don't know" ;
+label define ma3_q165  1 "Yes" 2 "No" 7 "Not asked" 8 "Not stated" 
+                       9 "Don't know" ;
+label define ma3_q170c 1 "... separation and then divorce or annulment?" 
+                       2 "... separation and then death of spouse?" 
+                       3 "... death of spouse?" 
+                       4 "Divorce or annulment without separation?" 5 "Other" 
+                       7 "Not asked" 8 "Not stated" 9 "Don't know" ;
+label define age_sep_ma3c 37.0 "Age 37 and less" 60.0 "Age 60 and more" 
+                       99.7 "Not asked" 99.8 "Not stated" 99.9 "Don't know" ;
+label define age_div_ma3c 40.0 "Age 40 and less" 60.0 "Age 60 and more" 
+                       99.7 "Not asked" 99.8 "Not stated" 99.9 "Don't know" ;
+label define pr_cl     1 "Yes" 2 "No" ;
+label define cu0_q107  1 "Yes" 2 "No" 7 "Not asked" 8 "Not stated" 
+                       9 "Don't know" ;
+label define cu0_rankc 1 "First union" 2 "Second union" 3 "Third union" 
+                       4 "Fourth union or more" 97 "Not asked" 
+                       98 "Not stated" ;
+label define age_cu0c  15.0 "Age 15 and less" 60.0 "Age 60 and more" 
+                       99.7 "Not asked" 99.8 "Not stated" 99.9 "Don't know" ;
+label define cu0_q120  1 "... widowed?" 2 "... separated?" 3 "...divorced?" 
+                       4 "... single (never legally married)?" 7 "Not asked" 
+                       8 "Not stated" 9 "Don't know" ;
+label define agedifgr_cu0 1 "Respondent is 11 + years older" 
+                       2 "Respondent is 6 to 10 years older" 
+                       3 "Respondent is 5 years older" 
+                       4 "Respondent is 4 years older" 
+                       5 "Respondent is 3 years older" 
+                       6 "Respondent is 2 years older" 
+                       7 "Respondent is 1 year older" 
+                       8 "Respondent and spouse/partner are same age" 
+                       9 "Respondent is 1 year younger" 
+                       10 "Respondent is 2 years younger" 
+                       11 "Respondent is 3 years younger" 
+                       12 "Respondent is 4 years younger" 
+                       13 "Respondent is 5 years younger" 
+                       14 "Respondent is 6 to 10 years younger" 
+                       15 "Respondent is 11 + years younger" 
+                       97 "Not asked - no spouse/partner in household" 
+                       98 "Not stated" 99 "Don't know" ;
+label define cu0_q140  1 "Yes" 2 "No" 7 "Not asked" 8 "Not stated" 
+                       9 "Don't know" ;
+label define no_chclprc 0 "None" 1 "One child" 2 "Two children" 
+                       3 "Three children" 4 "Four children" 
+                       5 "Five or more children" 7 "Not asked" 8 "Not stated" 
+                       9 "Don't know" ;
+label define no_chu19clprc 0 "None" 1 "One child" 2 "Two or more children" 
+                       7 "Not asked" 8 "Not stated" 9 "Don't know" ;
+label define cu0_q220  1 "Yes" 2 "No" 7 "Not asked" 8 "Not stated" 
+                       9 "Don't know" ;
+label define cu1_rankc 1 "First union" 2 "Second union" 
+                       3 "Third union or more" 97 "Not asked" 98 "Not stated" ;
+label define age_cu1c  15.0 "Age 15 and less" 60.0 "Age 60 and over" 
+                       99.7 "Not asked" 99.8 "Not stated" 99.9 "Don't know" ;
+label define agedifgr_cu1 1 "Respondent is 11 + years older" 
+                       2 "Respondent is 6 to 10 years older" 
+                       3 "Respondent is 5 years older" 
+                       4 "Respondent is 4 years older" 
+                       5 "Respondent is 3 years older" 
+                       6 "Respondent is 2 years older" 
+                       7 "Respondent is 1 year older" 
+                       8 "Respondent and spouse/partner are same age" 
+                       9 "Respondent is 1 year younger" 
+                       10 "Respondent is 2 years younger" 
+                       11 "Respondent is 3 years younger" 
+                       12 "Respondent is 4 years younger" 
+                       13 "Respondent is 5 years younger" 
+                       14 "Respondent is 6 to 10 years younger" 
+                       15 "Respondent is 11 + years younger" 
+                       97 "Not asked - no spouse/partner in household" 
+                       98 "Not stated" 99 "Don't know" ;
+label define cu1_q170  1 "Separation" 2 "Death of partner" 7 "Not asked" 
+                       8 "Not stated" 9 "Don't know" ;
+label define age_sep_cu1c 18.0 "Age 18 and less" 60.0 "Age 60 or more" 
+                       99.7 "Not asked" 99.8 "Not stated" 99.9 "Don't know" ;
+label define cu1_q190  1 "Yes" 2 "No" 7 "Not asked" 8 "Not stated" 
+                       9 "Don't know" ;
+label define cu1_q230  1 "Yes" 2 "No" 7 "Not asked" 8 "Not stated" 
+                       9 "Don't know" ;
+label define cu2_rankc 1 "First union" 2 "Second union" 3 "Third union" 
+                       4 "Fourth union or more" 97 "Not asked" 
+                       98 "Not stated" ;
+label define age_cu2c  20.0 "Age 20 and less" 60.0 "Age 60 and over" 
+                       99.7 "Not asked" 99.8 "Not stated" 99.9 "Don't know" ;
+label define agedifgr_cu2 1 "Respondent is 11 + years older" 
+                       2 "Respondent is 6 to 10 years older" 
+                       3 "Respondent is 5 years older" 
+                       4 "Respondent is 4 years older" 
+                       5 "Respondent is 3 years older" 
+                       6 "Respondent is 2 years older" 
+                       7 "Respondent is 1 year older" 
+                       8 "Respondent and spouse/partner are same age" 
+                       9 "Respondent is 1 year younger" 
+                       10 "Respondent is 2 years younger" 
+                       11 "Respondent is 3 years younger" 
+                       12 "Respondent is 4 years younger" 
+                       13 "Respondent is 5 years younger" 
+                       14 "Respondent is 6 to 10 years younger" 
+                       15 "Respondent is 11 + years younger" 
+                       97 "Not asked - no spouse/partner in household" 
+                       98 "Not stated" 99 "Don't know" ;
+label define cu2_q170  1 "Separation" 2 "Death of partner" 7 "Not asked" 
+                       8 "Not stated" 9 "Don't know" ;
+label define age_sep_cu2c 25.0 "Age 25 and less" 60.0 "Age 60 or more" 
+                       99.7 "Not asked" 99.8 "Not stated" 99.9 "Don't know" ;
+label define cu2_q190  1 "Yes" 2 "No" 7 "Not asked" 8 "Not stated" 
+                       9 "Don't know" ;
+label define cu2_q230  1 "Yes" 2 "No" 7 "Not asked" 8 "Not stated" 
+                       9 "Don't know" ;
+label define cu3_rankc 1 "First union" 2 "Second union" 3 "Third union" 
+                       4 "Fourth union or more" 97 "Not asked" 
+                       98 "Not stated" ;
+label define age_cu3c  30.0 "Age 30 and less" 50.0 "Age 50 or more" 
+                       99.7 "Not asked" 99.8 "Not stated" 99.9 "Don't know" ;
+label define cu3_q170  1 "Separation" 2 "Death of partner" 7 "Not asked" 
+                       8 "Not stated" 9 "Don't know" ;
+label define age_sep_cu3c 35.0 "Age 35 and less" 54.0 "Age 54 or more" 
+                       99.7 "Not asked" 99.8 "Not stated" 99.9 "Don't know" ;
+label define cu3_q190  1 "Yes" 2 "No" 7 "Not asked" 8 "Not stated" 
+                       9 "Don't know" ;
+label define no_cl_nomarrc 0 "No common-law relationship" 
+                       1 "One common-law relationship" 
+                       2 "Two common-law relationships" 
+                       3 "Three common-law relationships" 
+                       4 "Four common-law relationships" 
+                       5 "Five or more common-law relationships" 
+                       8 "Not stated" 9 "Don't know" ;
+label define no_sepdiv_life 0 "None" ;
+label define mac_q110  1 "To have children/adopt" 
+                       2 "Proof of love and commitment" 
+                       3 "Living together was not socially acceptable" 
+                       4 "To make relationship official" 
+                       5 "Financial security" 6 "Spouse wanted to" 
+                       7 "Pressure from family and friends" 
+                       8 "Cultural, moral/religious beliefs" 9 "Other" 
+                       97 "Not asked" 98 "Not stated" 99 "Don't know" ;
+label define wever_marr 1 "Yes" 2 "No" 3 "Uncertain" 7 "Not asked" 
+                       8 "Not stated" 9 "Don't know" ;
+label define mai_q145  1 "In the next year" 2 "In 2 years" 
+                       3 "In 3 years or more" 
+                       4 "Something you have not discussed" 7 "Not asked" 
+                       8 "Not stated" 9 "Don't know" ;
+label define mci_q150  1 "To have children/adopt" 
+                       2 "Proof of love and commitment" 
+                       3 "Living together was not socially acceptable" 
+                       4 "To make relationship official" 
+                       5 "Financial security" 6 "Spouse wanted to" 
+                       7 "Pressure from family and friends" 
+                       8 "Cultural, moral, religious beliefs" 9 "Other" 
+                       97 "Not asked" 98 "Not stated" 99 "Don't know" ;
+label define cli_q160  1 "Relationship is too recent/fragile" 
+                       2 "Current situation is fine as is" 
+                       3 "Wedding (preparations, cost)" 
+                       4 "Don't believe in the institution of marriage" 
+                       5 "Maintain financial independence" 
+                       6 "Partner does not want to" 
+                       7 "Does not want to commit (emotionally)" 
+                       8 "Never thought about it" 9 "Other" 
+                       10 "Past experience" 97 "Not asked" 98 "Not stated" 
+                       99 "Don't know" ;
+label define lat_q120  1 "Yes" 2 "No" 7 "Not asked" 8 "Not stated" 
+                       9 "Don't know" ;
+label define age_latc  15.0 "Age 15 and less" 60.0 "Age 60 and over" 
+                       99.7 "Not asked" 99.8 "Not stated" 99.9 "Don't know" ;
+label define agedifgr_lat 1 "Respondent is 11 + years older" 
+                       2 "Respondent is 6 to 10 years older" 
+                       3 "Respondent is 5 years older" 
+                       4 "Respondent is 4 years older" 
+                       5 "Respondent is 3 years older" 
+                       6 "Respondent is 2 years older" 
+                       7 "Respondent is 1 year older" 
+                       8 "Respondent and spouse/partner are same age" 
+                       9 "Respondent is 1 year younger" 
+                       10 "Respondent is 2 years younger" 
+                       11 "Respondent is 3 years younger" 
+                       12 "Respondent is 4 years younger" 
+                       13 "Respondent is 5 years younger" 
+                       14 "Respondent is 6 to 10 years younger" 
+                       15 "Respondent is 11 + years younger" 
+                       97 "Not asked - no spouse/partner in household" 
+                       98 "Not stated" 99 "Don't know" ;
+label define rsh_q125  
+                       1 "... you and your spouse/partner decided to live apart?" 
+                       2 "... you want to live apart?" 
+                       3 "... your spouse/partner wants to live apart?" 
+                       4 "... you are constrained by circumstances?" 
+                       5 "We have not considered the idea to live together." 
+                       7 "Not asked" 8 "Not stated" 9 "Don't know" ;
+label define rsh_q131  1 "... in the same building?" 
+                       2 "... in the same neighbourhood (30 min or less by foot, bus o or car)?" 
+                       3 "... in the surrounding area (more than 30 minutes and less than 1 hour by car)?" 
+                       4 "... one hour or more but less than a half day by car?" 
+                       5 "... a half day or more by car?" 7 "Not asked" 
+                       8 "Not stated" 9 "Don't know" ;
+label define rsh_q132  1 "All" 2 "Most" 3 "About half" 4 "Some" 5 "None" 
+                       7 "Not asked" 8 "Not stated" 9 "Don't know" ;
+label define rsh_q133  1 "Definitely yes" 2 "Probably yes" 3 "Probably not" 
+                       4 "No, definitely not" 5 "Uncertain" 7 "Not asked" 
+                       8 "Not stated" 9 "Don't know" ;
+label define rsh_q134  1 "In the next year" 2 "In 2 years" 
+                       3 "In 3 years or more" 4 "Have not discussed" 
+                       7 "Not asked" 8 "Not stated" 9 "Don't know" ;
+label define cui_q150  1 "Certainly yes" 2 "Probably yes" 3 "Probably not" 
+                       4 "Certainly not" 7 "Not asked" 8 "Not stated" 
+                       9 "Don't know" ;
+label define cor_q010  1 "Yes" 2 "No" 7 "Not asked" 8 "Not stated" 
+                       9 "Don't know" ;
+label define cor_q020  1 "Yes" 2 "No" 7 "Not asked" 8 "Not stated" 
+                       9 "Don't know" ;
+label define cor_q031  1 "Yes" 2 "No" 7 "Not asked" 8 "Not stated" 
+                       9 "Don't know" ;
+label define cor_q041  1 "Yes" 2 "No" 
+                       3 "Gave birth to a child but gave child up for adoption" 
+                       7 "Not asked" 8 "Not stated" 9 "Don't know" ;
+label define cor_q070  1 "Yes" 2 "No" 7 "Not asked" 8 "Not stated" 
+                       9 "Don't know" ;
+label define no_grndchdc 0 "None" 1 "One" 2 "Two" 3 "Three" 4 "Four" 5 "Five" 
+                       6 "Six" 7 "Seven" 8 "Eight" 9 "Nine" 10 "Ten" 
+                       11 "Eleven" 12 "Twelve" 13 "Thirteen" 14 "Fourteen" 
+                       15 "Fifteen or more" 98 "Not stated" 99 "Don't know" ;
+label define totalchdc 0 "No children" 1 "One child" 2 "Two children" 
+                       3 "Three children" 4 "Four children" 5 "Five children" 
+                       6 "Six children" 7 "Seven children or more" 
+                       98 "Not stated" 99 "Don't know" ;
+label define sexchd_1  1 "Male" 2 "Female" 3 "Knowledge of child is unknown" 
+                       7 "Not asked" 8 "Not stated" 9 "Don't know" ;
+label define sexchd_2  1 "Male" 2 "Female" 3 "Knowledge of child is unknown" 
+                       7 "Not asked" 8 "Not stated" 9 "Don't know" ;
+label define sexchd_3  1 "Male" 2 "Female" 3 "Knowledge of child is unknown" 
+                       7 "Not asked" 8 "Not stated" 9 "Don't know" ;
+label define sexchd_4  1 "Male" 2 "Female" 3 "Knowledge of child is unknown" 
+                       7 "Not asked" 8 "Not stated" 9 "Don't know" ;
+label define sexchd_5  1 "Male" 2 "Female" 3 "Knowledge of child is unknown" 
+                       7 "Not asked" 8 "Not stated" 9 "Don't know" ;
+label define sexchd_6  1 "Male" 2 "Female" 3 "Knowledge of child is unknown" 
+                       7 "Not asked" 8 "Not stated" 9 "Don't know" ;
+label define sexchd_7  1 "Male" 2 "Female" 3 "Knowledge of child is unknown" 
+                       7 "Not asked" 8 "Not stated" 9 "Don't know" ;
+label define agechd_1c 60 "60 years or more" 
+                       993 "Knowledge of child is unknown" 
+                       995 "Child deceased" 997 "Not asked" 998 "Not stated" 
+                       999 "Don't know" ;
+label define agechd_2c 60 "60 years or more" 
+                       993 "Knowledge of child is unknown" 
+                       995 "Child deceased" 997 "Not asked" 998 "Not stated" 
+                       999 "Don't know" ;
+label define agechd_3c 60 "60 years or more" 
+                       993 "Knowledge of child is unknown" 
+                       995 "Child deceased" 997 "Not asked" 998 "Not stated" 
+                       999 "Don't know" ;
+label define agechd_4c 60 "60 years or more" 
+                       993 "Knowledge of child is unknown" 
+                       995 "Child deceased" 997 "Not asked" 998 "Not stated" 
+                       999 "Don't know" ;
+label define agechd_5c 60 "60 years or more" 
+                       993 "Knowledge of child is unknown" 
+                       995 "Child deceased" 997 "Not asked" 998 "Not stated" 
+                       999 "Don't know" ;
+label define agechd_6c 60 "60 years or more" 
+                       993 "Knowledge of child is unknown" 
+                       995 "Child deceased" 997 "Not asked" 998 "Not stated" 
+                       999 "Don't know" ;
+label define agechd_7c 60 "60 years or more" 
+                       993 "Knowledge of child is unknown" 
+                       995 "Child deceased" 997 "Not asked" 998 "Not stated" 
+                       999 "Don't know" ;
+label define chddecc   0 "No children" 1 "One child" 2 "Two or more children" 
+                       7 "Not asked" 8 "Not stated" 9 "Don't know" ;
+label define age_chdborn_1c 15.0 "Age 15 or less" 45.0 "Age 45 or more" 
+                       99.3 "Knowledge of child is unknown" 
+                       99.5 "Child deceased" 99.7 "Not asked" 
+                       99.8 "Not stated" 99.9 "Don't know" ;
+label define age_chdborn_2c 15.0 "Age 15 or less" 45.0 "Age 45 or more" 
+                       99.3 "Knowledge of child is unknown" 
+                       99.5 "Child deceased" 99.7 "Not asked" 
+                       99.8 "Not stated" 99.9 "Don't know" ;
+label define age_chdborn_3c 15.0 "Age 15 or less" 45.0 "Age 45 or more" 
+                       99.3 "Knowledge of child is unknown" 
+                       99.5 "Child deceased" 99.7 "Not asked" 
+                       99.8 "Not stated" 99.9 "Don't know" ;
+label define age_chdborn_4c 15.0 "Age 15 or less" 45.0 "Age 45 or more" 
+                       99.3 "Knowledge of child is unknown" 
+                       99.5 "Child deceased" 99.7 "Not asked" 
+                       99.8 "Not stated" 99.9 "Don't know" ;
+label define age_chdborn_5c 15.0 "Age 15 or less" 45.0 "Age 45 or more" 
+                       99.3 "Knowledge of child is unknown" 
+                       99.5 "Child deceased" 99.7 "Not asked" 
+                       99.8 "Not stated" 99.9 "Don't know" ;
+label define age_chdborn_6c 15.0 "Age 15 or less" 45.0 "Age 45 or more" 
+                       99.3 "Knowledge of child is unknown" 
+                       99.5 "Child deceased" 99.7 "Not asked" 
+                       99.8 "Not stated" 99.9 "Don't know" ;
+label define age_chdborn_7c 15.0 "Age 15 or less" 45.0 "Age 45 or more" 
+                       99.3 "Knowledge of child is unknown" 
+                       99.5 "Child deceased" 99.7 "Not asked" 
+                       99.8 "Not stated" 99.9 "Don't know" ;
+label define age_chdjoin_hom_1c 15.0 "Age 15 and less" 45.0 "Age 45 or more" 
+                       99.3 "Knowledge of child is unknown" 
+                       99.5 "Child deceased" 99.7 "Not asked" 
+                       99.8 "Not stated" 99.9 "Don't know" ;
+label define age_chdjoin_hom_2c 15.0 "Age 15 and less" 45.0 "Age 45 or more" 
+                       99.3 "Knowledge of child is unknown" 
+                       99.5 "Child deceased" 99.7 "Not asked" 
+                       99.8 "Not stated" 99.9 "Don't know" ;
+label define age_chdjoin_hom_3c 15.0 "Age 15 and less" 45.0 "Age 45 or more" 
+                       99.3 "Knowledge of child is unknown" 
+                       99.5 "Child deceased" 99.7 "Not asked" 
+                       99.8 "Not stated" 99.9 "Don't know" ;
+label define age_chdjoin_hom_4c 15.0 "Age 15 and less" 45.0 "Age 45 or more" 
+                       99.3 "Knowledge of child is unknown" 
+                       99.5 "Child deceased" 99.7 "Not asked" 
+                       99.8 "Not stated" 99.9 "Don't know" ;
+label define age_chdjoin_hom_5c 15.0 "Age 15 and less" 45.0 "Age 45 or more" 
+                       99.3 "Knowledge of child is unknown" 
+                       99.5 "Child deceased" 99.7 "Not asked" 
+                       99.8 "Not stated" 99.9 "Don't know" ;
+label define age_chdjoin_hom_6c 15.0 "Age 15 and less" 45.0 "Age 45 or more" 
+                       99.3 "Knowledge of child is unknown" 
+                       99.5 "Child deceased" 99.7 "Not asked" 
+                       99.8 "Not stated" 99.9 "Don't know" ;
+label define age_chdjoin_hom_7c 15.0 "Age 15 and less" 45.0 "Age 45 or more" 
+                       99.3 "Knowledge of child is unknown" 
+                       99.5 "Child deceased" 99.7 "Not asked" 
+                       99.8 "Not stated" 99.9 "Don't know" ;
+label define hhldchd_1 1 "Yes" 2 "No" 3 "Child is deceased" 
+                       4 "Knowledge of child is unknown" 7 "Not asked" 
+                       8 "Not stated" 9 "Don't know" ;
+label define hhldchd_2 1 "Yes" 2 "No" 3 "Child is deceased" 
+                       4 "Knowledge of child is unknown" 7 "Not asked" 
+                       8 "Not stated" 9 "Don't know" ;
+label define hhldchd_3 1 "Yes" 2 "No" 3 "Child is deceased" 
+                       4 "Knowledge of child is unknown" 7 "Not asked" 
+                       8 "Not stated" 9 "Don't know" ;
+label define hhldchd_4 1 "Yes" 2 "No" 3 "Child is deceased" 
+                       4 "Knowledge of child is unknown" 7 "Not asked" 
+                       8 "Not stated" 9 "Don't know" ;
+label define hhldchd_5 1 "Yes" 2 "No" 3 "Child is deceased" 
+                       4 "Knowledge of child is unknown" 7 "Not asked" 
+                       8 "Not stated" 9 "Don't know" ;
+label define hhldchd_6c 1 "Yes" 2 "No" 3 "Child is deceased" 
+                       4 "Knowledge of child is unknown" 7 "Not asked" 
+                       8 "Not stated" 9 "Don't know" ;
+label define hhldchd_7c 1 "Yes" 2 "No" 3 "Child is deceased" 
+                       4 "Knowledge of child is unknown" 7 "Not asked" 
+                       8 "Not stated" 9 "Don't know" ;
+label define chdinftc  0 "No children" 1 "One child" 2 "Two children" 
+                       3 "Three children" 4 "Four or more children" 
+                       7 "Not asked" 8 "Not stated" 9 "Don't know" ;
+label define chdinptc  0 "No children" 1 "One child" 2 "Two children" 
+                       3 "Three children" 4 "Four or more children" 
+                       7 "Not asked" 8 "Not stated" 9 "Don't know" ;
+label define chdoutc   0 "No children" 1 "One child" 2 "Two children" 
+                       3 "Three children" 4 "Four children" 
+                       5 "Five or more children" 7 "Not asked" 8 "Not stated" 
+                       9 "Don't know" ;
+label define hhldstat_1 1 "Lives with respondent full-time" 
+                       2 "Lives with respondent part-time" 
+                       3 "Does not live with respondent" 
+                       4 "Child is deceased" 5 "Unknown" 7 "Not asked" 
+                       8 "Not stated" 9 "Don't know" ;
+label define hhldstat_2 1 "Lives with respondent full-time" 
+                       2 "Lives with respondent part-time" 
+                       3 "Does not live with respondent" 
+                       4 "Child is deceased" 5 "Unknown" 7 "Not asked" 
+                       8 "Not stated" 9 "Don't know" ;
+label define hhldstat_3 1 "Lives with respondent full-time" 
+                       2 "Lives with respondent part-time" 
+                       3 "Does not live with respondent" 
+                       4 "Child is deceased" 5 "Unknown" 7 "Not asked" 
+                       8 "Not stated" 9 "Don't know" ;
+label define hhldstat_4 1 "Lives with respondent full-time" 
+                       2 "Lives with respondent part-time" 
+                       3 "Does not live with respondent" 
+                       4 "Child is deceased" 5 "Unknown" 7 "Not asked" 
+                       8 "Not stated" 9 "Don't know" ;
+label define hhldstat_5 1 "Lives with respondent full-time" 
+                       2 "Lives with respondent part-time" 
+                       3 "Does not live with respondent" 
+                       4 "Child is deceased" 5 "Unknown" 7 "Not asked" 
+                       8 "Not stated" 9 "Don't know" ;
+label define hhldstat_6c 1 "Lives with respondent full-time" 
+                       2 "Lives with respondent part-time" 
+                       3 "Does not live with respondent" 
+                       4 "Child is deceased" 5 "Unknown" 7 "Not asked" 
+                       8 "Not stated" 9 "Don't know" ;
+label define hhldstat_7c 1 "Lives with respondent full-time" 
+                       2 "Lives with respondent part-time" 
+                       3 "Does not live with respondent" 
+                       4 "Child is deceased" 5 "Unknown" 7 "Not asked" 
+                       8 "Not stated" 9 "Don't know" ;
+label define rci_q130_01 1 "Birth child" 2 "Step child" 3 "Adopted child" 
+                       4 "Knowledge of child is unknown" 7 "Not asked" 
+                       8 "Not stated" 9 "Don't know" ;
+label define rci_q130_02 1 "Birth child" 2 "Step child" 3 "Adopted child" 
+                       4 "Knowledge of child is unknown" 7 "Not asked" 
+                       8 "Not stated" 9 "Don't know" ;
+label define rci_q130_03 1 "Birth child" 2 "Step child" 3 "Adopted child" 
+                       4 "Knowledge of child is unknown" 7 "Not asked" 
+                       8 "Not stated" 9 "Don't know" ;
+label define rci_q130_04c 1 "Birth child" 2 "Step child" 3 "Adopted child" 
+                       4 "Knowledge of child is unknown" 7 "Not asked" 
+                       8 "Not stated" 9 "Don't know" ;
+label define rci_q130_05 1 "Birth child" 2 "Step child" 3 "Adopted child" 
+                       4 "Knowledge of child is unknown" 7 "Not asked" 
+                       8 "Not stated" 9 "Don't know" ;
+label define rci_q130_06c 1 "Birth child" 2 "Step child" 3 "Adopted child" 
+                       4 "Knowledge of child is unknown" 7 "Not asked" 
+                       8 "Not stated" 9 "Don't know" ;
+label define rci_q130_07 1 "Birth child" 2 "Step child" 3 "Adopted child" 
+                       4 "Knowledge of child is unknown" 7 "Not asked" 
+                       8 "Not stated" 9 "Don't know" ;
+label define rci_q165_01 1 "Shared living arrangement with other parent" 
+                       2 "School related reasons" 3 "Job related reasons" 
+                       4 "Other" 7 "Not asked" 8 "Not stated" 9 "Don't know" ;
+label define rci_q165_02 1 "Shared living arrangement with other parent" 
+                       2 "School related reasons" 3 "Job related reasons" 
+                       4 "Other" 7 "Not asked" 8 "Not stated" 9 "Don't know" ;
+label define rci_q165_03 1 "Shared living arrangement with other parent" 
+                       2 "School related reasons" 3 "Job related reasons" 
+                       4 "Other" 7 "Not asked" 8 "Not stated" 9 "Don't know" ;
+label define rci_q165_04 1 "Shared living arrangement with other parent" 
+                       2 "School related reasons" 3 "Job related reasons" 
+                       4 "Other" 7 "Not asked" 8 "Not stated" 9 "Don't know" ;
+label define rci_q165_05c 1 "Shared living arrangement with other parent" 
+                       2 "School related reasons" 3 "Job related reasons" 
+                       4 "Other" 7 "Not asked" 8 "Not stated" 9 "Don't know" ;
+label define rci_q165_06c 1 "Shared living arrangement with other parent" 
+                       2 "School related reasons" 3 "Job related reasons" 
+                       4 "Other" 7 "Not asked" 8 "Not stated" 9 "Don't know" ;
+label define rci_q165_07c 1 "Shared living arrangement with other parent" 
+                       2 "School related reasons" 3 "Job related reasons" 
+                       4 "Other" 7 "Not asked" 8 "Not stated" 9 "Don't know" ;
+label define rci_q170_01c 1 "Child's birth (adopted) mother" 
+                       2 "Child's birth (adopted) father" 
+                       3 "A relative of the child" 
+                       4 "Parent substitute/foster" 
+                       5 "Child was given up for adoption" 
+                       6 "Friend/spouse/living alone" 7 "Other" 
+                       97 "Not asked" 98 "Not stated" 99 "Don't know" ;
+label define rci_q170_02 1 "Child's birth (adopted) mother" 
+                       2 "Child's birth (adopted) father" 
+                       3 "A relative of the child" 
+                       4 "Parent substitute/foster" 
+                       5 "Child was given up for adoption" 
+                       6 "Friend/spouse/living alone" 7 "Other" 
+                       97 "Not asked" 98 "Not stated" 99 "Don't know" ;
+label define rci_q170_03 1 "Child's birth (adopted) mother" 
+                       2 "Child's birth (adopted) father" 
+                       3 "A relative of the child" 
+                       4 "Parent substitute/foster" 
+                       5 "Child was given up for adoption" 
+                       6 "Friend/spouse/living alone" 7 "Other" 
+                       97 "Not asked" 98 "Not stated" 99 "Don't know" ;
+label define rci_q170_04c 1 "Child's birth (adopted) mother" 
+                       2 "Child's birth (adopted) father" 
+                       3 "A relative of the child" 
+                       4 "Parent substitute/foster" 
+                       5 "Child was given up for adoption" 
+                       6 "Friend/spouse/living alone" 7 "Other" 
+                       97 "Not asked" 98 "Not stated" 99 "Don't know" ;
+label define rci_q170_05c 1 "Child's birth (adopted) mother" 
+                       2 "Child's birth (adopted) father" 
+                       3 "A relative of the child" 
+                       4 "Parent substitute/foster" 
+                       5 "Child was given up for adoption" 
+                       6 "Friend/spouse/living alone" 7 "Other" 
+                       97 "Not asked" 98 "Not stated" 99 "Don't know" ;
+label define rci_q170_06c 1 "Child's birth (adopted) mother" 
+                       2 "Child's birth (adopted) father" 
+                       3 "A relative of the child" 
+                       4 "Parent substitute/foster" 
+                       5 "Child was given up for adoption" 
+                       6 "Friend/spouse/living alone" 7 "Other" 
+                       97 "Not asked" 98 "Not stated" 99 "Don't know" ;
+label define rci_q170_07c 1 "Child's birth (adopted) mother" 
+                       2 "Child's birth (adopted) father" 
+                       3 "A relative of the child" 
+                       4 "Parent substitute/foster" 
+                       5 "Child was given up for adoption" 
+                       6 "Friend/spouse/living alone" 7 "Other" 
+                       97 "Not asked" 98 "Not stated" 99 "Don't know" ;
+label define ccp_q100_01 1 "Yes" 2 "No" 7 "Not asked" 8 "Not stated" 
+                       9 "Don't know" ;
+label define ccp_q100_02 1 "Yes" 2 "No" 7 "Not asked" 8 "Not stated" 
+                       9 "Don't know" ;
+label define ccp_q100_03 1 "Yes" 2 "No" 7 "Not asked" 8 "Not stated" 
+                       9 "Don't know" ;
+label define ccp_q100_04 1 "Yes" 2 "No" 7 "Not asked" 8 "Not stated" 
+                       9 "Don't know" ;
+label define ccp_q105_01 1 "Yes" 2 "No" 7 "Not asked" 8 "Not stated" 
+                       9 "Don't know" ;
+label define ccp_q105_02 1 "Yes" 2 "No" 7 "Not asked" 8 "Not stated" 
+                       9 "Don't know" ;
+label define ccp_q105_03 1 "Yes" 2 "No" 7 "Not asked" 8 "Not stated" 
+                       9 "Don't know" ;
+label define ccp_q105_04 1 "Yes" 2 "No" 7 "Not asked" 8 "Not stated" 
+                       9 "Don't know" ;
+label define ccp_q110_01c 1 "...a (licensed) home daycare?" 2 "...a daycare?" 
+                       3 "...a preschool/nursery School?" 
+                       4 "...a private arrangement (relative, nanny, etc.)?" 
+                       5 "...older brothers or sisters? (birth, adopted or step)" 
+                       6 "...another type of arrangement?" 7 "Not asked" 
+                       8 "Not stated" 9 "Don't know" ;
+label define ccp_q110_02c 1 "...a (licensed) home daycare?" 2 "...a daycare?" 
+                       3 "...a preschool/nursery School?" 
+                       4 "...a private arrangement (relative, nanny, etc.)?" 
+                       5 "...older brothers or sisters? (birth, adopted or step)" 
+                       6 "...another type of arrangement?" 7 "Not asked" 
+                       8 "Not stated" 9 "Don't know" ;
+label define ccp_q110_03 1 "...a (licensed) home daycare?" 2 "...a daycare?" 
+                       3 "...a preschool/nursery School?" 
+                       4 "...a private arrangement (relative, nanny, etc.)?" 
+                       5 "...older brothers or sisters? (birth, adopted or step)" 
+                       6 "...another type of arrangement?" 7 "Not asked" 
+                       8 "Not stated" 9 "Don't know" ;
+label define ccp_q110_04 1 "...a (licensed) home daycare?" 2 "...a daycare?" 
+                       3 "...a preschool/nursery School?" 
+                       4 "...a private arrangement (relative, nanny, etc.)?" 
+                       5 "...older brothers or sisters? (birth, adopted or step)" 
+                       6 "...another type of arrangement?" 7 "Not asked" 
+                       8 "Not stated" 9 "Don't know" ;
+label define ccp_q115_01 1 "...a center-based child care (CPE)?" 
+                       2 "...a private center-based child care?" 
+                       3 "...a family-based care affiliated with a CPE?" 
+                       4 "...a family-based care not affiliated with a CPE?" 
+                       7 "Not asked" 8 "Not stated" 9 "Don't know" ;
+label define ccp_q115_02 1 "...a center-based child care (CPE)?" 
+                       2 "...a private center-based child care?" 
+                       3 "...a family-based care affiliated with a CPE?" 
+                       4 "...a family-based care not affiliated with a CPE?" 
+                       7 "Not asked" 8 "Not stated" 9 "Don't know" ;
+label define ccp_q115_03c 1 "...a center-based child care (CPE)?" 
+                       2 "...a private center-based child care?" 
+                       3 "...a family-based care affiliated with a CPE?" 
+                       4 "...a family-based care not affiliated with a CPE?" 
+                       7 "Not asked" 8 "Not stated" 9 "Don't know" ;
+label define ccp_q115_04c 1 "...a center-based child care (CPE)?" 
+                       2 "...a private center-based child care?" 
+                       3 "...a family-based care affiliated with a CPE?" 
+                       4 "...a family-based care not affiliated with a CPE?" 
+                       7 "Not asked" 8 "Not stated" 9 "Don't know" ;
+label define ccp_q120_01 1 "...in the child(ren)'s home?" 
+                       2 "...in someone else's home?" 
+                       3 "...in a daycare, a facility or a centre?" 4 "Other" 
+                       7 "Not asked" 8 "Not stated" 9 "Don't know" ;
+label define ccp_q120_02 1 "...in the child(ren)'s home?" 
+                       2 "...in someone else's home?" 
+                       3 "...in a daycare, a facility or a centre?" 4 "Other" 
+                       7 "Not asked" 8 "Not stated" 9 "Don't know" ;
+label define ccp_q120_03 1 "...in the child(ren)'s home?" 
+                       2 "...in someone else's home?" 
+                       3 "...in a daycare, a facility or a centre?" 4 "Other" 
+                       7 "Not asked" 8 "Not stated" 9 "Don't know" ;
+label define ccp_q120_04 1 "...in the child(ren)'s home?" 
+                       2 "...in someone else's home?" 
+                       3 "...in a daycare, a facility or a centre?" 4 "Other" 
+                       7 "Not asked" 8 "Not stated" 9 "Don't know" ;
+label define ccp_q125_01 1 "Early childhood educator" 2 "Nanny at home" 
+                       3 "Friend or acquaintance" 
+                       4 "Respondent's parents or stepparents" 
+                       5 "Other related member- living in the household" 
+                       6 "Other related member - not living in the household" 
+                       7 "Another person" 97 "Not asked" 98 "Not stated" 
+                       99 "Don't know" ;
+label define ccp_q125_02c 1 "Early childhood educator" 2 "Nanny at home" 
+                       3 "Friend or acquaintance" 
+                       4 "Respondent's parents or stepparents" 
+                       5 "Other related member- living in the household" 
+                       6 "Other related member - not living in the household" 
+                       7 "Another person" 97 "Not asked" 98 "Not stated" 
+                       99 "Don't know" ;
+label define ccp_q125_03c 1 "Early childhood educator" 2 "Nanny at home" 
+                       3 "Friend or acquaintance" 
+                       4 "Respondent's parents or stepparents" 
+                       5 "Other related member- living in the household" 
+                       6 "Other related member - not living in the household" 
+                       7 "Another person" 97 "Not asked" 98 "Not stated" 
+                       99 "Don't know" ;
+label define ccp_q125_04c 1 "Early childhood educator" 2 "Nanny at home" 
+                       3 "Friend or acquaintance" 
+                       4 "Respondent's parents or stepparents" 
+                       5 "Other related member- living in the household" 
+                       6 "Other related member - not living in the household" 
+                       7 "Another person" 97 "Not asked" 98 "Not stated" 
+                       99 "Don't know" ;
+label define ccs_q100_01 1 "Yes" 2 "No" 7 "Not asked" 8 "Not stated" 
+                       9 "Don't know" ;
+label define ccs_q100_02 1 "Yes" 2 "No" 7 "Not asked" 8 "Not stated" 
+                       9 "Don't know" ;
+label define ccs_q100_03 1 "Yes" 2 "No" 7 "Not asked" 8 "Not stated" 
+                       9 "Don't know" ;
+label define ccs_q100_04 1 "Yes" 2 "No" 7 "Not asked" 8 "Not stated" 
+                       9 "Don't know" ;
+label define ccs_q105_01 1 "Yes" 2 "No" 7 "Not asked" 8 "Not stated" 
+                       9 "Don't know" ;
+label define ccs_q105_02 1 "Yes" 2 "No" 7 "Not asked" 8 "Not stated" 
+                       9 "Don't know" ;
+label define ccs_q105_03 1 "Yes" 2 "No" 7 "Not asked" 8 "Not stated" 
+                       9 "Don't know" ;
+label define ccs_q105_04 1 "Yes" 2 "No" 7 "Not asked" 8 "Not stated" 
+                       9 "Don't know" ;
+label define ccs_q110_01c 1 "...a private arrangement (relative, nanny, etc.)?" 
+                       2 "...care by older brothers or sisters? (include birth, adopted or step)" 
+                       3 "...a before or after school service?" 
+                       4 "...another type of arrangement?" 7 "Not asked" 
+                       8 "Not stated" 9 "Don't know" ;
+label define ccs_q110_02 1 "...a private arrangement (relative, nanny, etc.)?" 
+                       2 "...care by older brothers or sisters? (include birth, adopted or step)" 
+                       3 "...a before or after school service?" 
+                       4 "...another type of arrangement?" 7 "Not asked" 
+                       8 "Not stated" 9 "Don't know" ;
+label define ccs_q110_03 1 "...a private arrangement (relative, nanny, etc.)?" 
+                       2 "...care by older brothers or sisters? (include birth, adopted or step)" 
+                       3 "...a before or after school service?" 
+                       4 "...another type of arrangement?" 7 "Not asked" 
+                       8 "Not stated" 9 "Don't know" ;
+label define ccs_q110_04 1 "...a private arrangement (relative, nanny, etc.)?" 
+                       2 "...care by older brothers or sisters? (include birth, adopted or step)" 
+                       3 "...a before or after school service?" 
+                       4 "...another type of arrangement?" 7 "Not asked" 
+                       8 "Not stated" 9 "Don't know" ;
+label define ccs_q120_01 1 "...in the child(ren)'s home?" 
+                       2 "...in someone else's home?" 3 "...in school?" 
+                       4 "...in a center/building?" 5 "Other" 7 "Not asked" 
+                       8 "Not stated" 9 "Don't know" ;
+label define ccs_q120_02 1 "...in the child(ren)'s home?" 
+                       2 "...in someone else's home?" 3 "...in school?" 
+                       4 "...in a center/building?" 5 "Other" 7 "Not asked" 
+                       8 "Not stated" 9 "Don't know" ;
+label define ccs_q120_03 1 "...in the child(ren)'s home?" 
+                       2 "...in someone else's home?" 3 "...in school?" 
+                       4 "...in a center/building?" 5 "Other" 7 "Not asked" 
+                       8 "Not stated" 9 "Don't know" ;
+label define ccs_q120_04 1 "...in the child(ren)'s home?" 
+                       2 "...in someone else's home?" 3 "...in school?" 
+                       4 "...in a center/building?" 5 "Other" 7 "Not asked" 
+                       8 "Not stated" 9 "Don't know" ;
+label define ccs_q125_01 1 "Child's teacher" 2 "Early childhood educator" 
+                       3 "Nanny at home" 4 "Friend or acquaintance" 
+                       5 "Respondent's parents or stepparents" 
+                       6 "Other related member - living in the household" 
+                       7 "Other related member - not living in the household" 
+                       8 "Another person" 97 "Not asked" 98 "Not stated" 
+                       99 "Don't know" ;
+label define ccs_q125_02 1 "Child's teacher" 2 "Early childhood educator" 
+                       3 "Nanny at home" 4 "Friend or acquaintance" 
+                       5 "Respondent's parents or stepparents" 
+                       6 "Other related member - living in the household" 
+                       7 "Other related member - not living in the household" 
+                       8 "Another person" 97 "Not asked" 98 "Not stated" 
+                       99 "Don't know" ;
+label define ccs_q125_03 1 "Child's teacher" 2 "Early childhood educator" 
+                       3 "Nanny at home" 4 "Friend or acquaintance" 
+                       5 "Respondent's parents or stepparents" 
+                       6 "Other related member - living in the household" 
+                       7 "Other related member - not living in the household" 
+                       8 "Another person" 97 "Not asked" 98 "Not stated" 
+                       99 "Don't know" ;
+label define ccs_q125_04c 1 "Child's teacher" 2 "Early childhood educator" 
+                       3 "Nanny at home" 4 "Friend or acquaintance" 
+                       5 "Respondent's parents or stepparents" 
+                       6 "Other related member - living in the household" 
+                       7 "Other related member - not living in the household" 
+                       8 "Another person" 97 "Not asked" 98 "Not stated" 
+                       99 "Don't know" ;
+label define cca_q620_01c 1 "Location (close to home or work, school, etc.)" 
+                       2 "Cost is affordable" 3 "Business hours" 
+                       4 "Care by somebody I can trust" 
+                       5 "My other child(ren) have gone/go there" 
+                       6 "Was recommended by someone" 7 "It's safe" 
+                       8 "Only option available" 9 "Learning program" 
+                       10 "Other" 97 "Not asked" 98 "Not stated" 
+                       99 "Don't know" ;
+label define cca_q620_02 1 "Location (close to home or work, school, etc.)" 
+                       2 "Cost is affordable" 3 "Business hours" 
+                       4 "Care by somebody I can trust" 
+                       5 "My other child(ren) have gone/go there" 
+                       6 "Was recommended by someone" 7 "It's safe" 
+                       8 "Only option available" 9 "Learning program" 
+                       10 "Other" 97 "Not asked" 98 "Not stated" 
+                       99 "Don't know" ;
+label define cca_q620_03 1 "Location (close to home or work, school, etc.)" 
+                       2 "Cost is affordable" 3 "Business hours" 
+                       4 "Care by somebody I can trust" 
+                       5 "My other child(ren) have gone/go there" 
+                       6 "Was recommended by someone" 7 "It's safe" 
+                       8 "Only option available" 9 "Learning program" 
+                       10 "Other" 97 "Not asked" 98 "Not stated" 
+                       99 "Don't know" ;
+label define cca_q620_04c 1 "Location (close to home or work, school, etc.)" 
+                       2 "Cost is affordable" 3 "Business hours" 
+                       4 "Care by somebody I can trust" 
+                       5 "My other child(ren) have gone/go there" 
+                       6 "Was recommended by someone" 7 "It's safe" 
+                       8 "Only option available" 9 "Learning program" 
+                       10 "Other" 97 "Not asked" 98 "Not stated" 
+                       99 "Don't know" ;
+label define cca_q650_01c 1 "1 day per week" 2 "2 days per week" 
+                       3 "3 days per week" 4 "4 days per week" 
+                       5 "5 days per week" 6 "6 days per week or more" 
+                       7 "Half a day or less a week" 8 "A few times a month" 
+                       9 "Not in the last month" 97 "Not asked" 
+                       98 "Not stated" 99 "Don't know" ;
+label define cca_q650_02 1 "1 day per week" 2 "2 days per week" 
+                       3 "3 days per week" 4 "4 days per week" 
+                       5 "5 days per week" 6 "6 days per week or more" 
+                       7 "Half a day or less a week" 8 "A few times a month" 
+                       9 "Not in the last month" 97 "Not asked" 
+                       98 "Not stated" 99 "Don't know" ;
+label define cca_q650_03c 1 "1 day per week" 2 "2 days per week" 
+                       3 "3 days per week" 4 "4 days per week" 
+                       5 "5 days per week" 6 "6 days per week or more" 
+                       7 "Half a day or less a week" 8 "A few times a month" 
+                       9 "Not in the last month" 97 "Not asked" 
+                       98 "Not stated" 99 "Don't know" ;
+label define cca_q650_04c 1 "1 day per week" 2 "2 days per week" 
+                       3 "3 days per week" 4 "4 days per week" 
+                       5 "5 days per week" 6 "6 days per week or more" 
+                       7 "Half a day or less a week" 8 "A few times a month" 
+                       9 "Not in the last month" 97 "Not asked" 
+                       98 "Not stated" 99 "Don't know" ;
+label define cca_q655_01 997 "Not asked" 998 "Not stated" 999 "Don't know" ;
+label define cca_q655_02 997 "Not asked" 998 "Not stated" 999 "Don't know" ;
+label define cca_q655_03 997 "Not asked" 998 "Not stated" 999 "Don't know" ;
+label define cca_q655_04 997 "Not asked" 998 "Not stated" 999 "Don't know" ;
+label define cca_q660_01 1 "Month" 2 "Year" 7 "Not asked" 8 "Not stated" 
+                       9 "Don't know" ;
+label define cca_q660_02 1 "Month" 2 "Year" 7 "Not asked" 8 "Not stated" 
+                       9 "Don't know" ;
+label define cca_q660_03 1 "Month" 2 "Year" 7 "Not asked" 8 "Not stated" 
+                       9 "Don't know" ;
+label define cca_q660_04 1 "Month" 2 "Year" 7 "Not asked" 8 "Not stated" 
+                       9 "Don't know" ;
+label define cca_q661_01 97 "Not asked" 98 "Not stated" 99 "Don't know" ;
+label define cca_q661_02 97 "Not asked" 98 "Not stated" 99 "Don't know" ;
+label define cca_q661_03 97 "Not asked" 98 "Not stated" 99 "Don't know" ;
+label define cca_q661_04 97 "Not asked" 98 "Not stated" 99 "Don't know" ;
+label define cca_q662_01 97 "Not asked" 98 "Not stated" 99 "Don't know" ;
+label define cca_q662_02 97 "Not asked" 98 "Not stated" 99 "Don't know" ;
+label define cca_q662_03 97 "Not asked" 98 "Not stated" 99 "Don't know" ;
+label define cca_q662_04 97 "Not asked" 98 "Not stated" 99 "Don't know" ;
+label define cca_q675_01 1 "...very satisfied" 2 "...satisfied" 
+                       3 "...dissatisfied" 4 "...very dissatisfied" 
+                       7 "Not asked" 8 "Not stated" 9 "Don't know" ;
+label define cca_q675_02 1 "...very satisfied" 2 "...satisfied" 
+                       3 "...dissatisfied" 4 "...very dissatisfied" 
+                       7 "Not asked" 8 "Not stated" 9 "Don't know" ;
+label define cca_q675_03 1 "...very satisfied" 2 "...satisfied" 
+                       3 "...dissatisfied" 4 "...very dissatisfied" 
+                       7 "Not asked" 8 "Not stated" 9 "Don't know" ;
+label define cca_q675_04 1 "...very satisfied" 2 "...satisfied" 
+                       3 "...dissatisfied" 4 "...very dissatisfied" 
+                       7 "Not asked" 8 "Not stated" 9 "Don't know" ;
+label define cca_q710_01 1 "Yes" 2 "No" 7 "Not asked" 8 "Not stated" 
+                       9 "Don't know" ;
+label define cca_q710_02 1 "Yes" 2 "No" 7 "Not asked" 8 "Not stated" 
+                       9 "Don't know" ;
+label define cca_q710_03 1 "Yes" 2 "No" 7 "Not asked" 8 "Not stated" 
+                       9 "Don't know" ;
+label define cca_q710_04 1 "Yes" 2 "No" 7 "Not asked" 8 "Not stated" 
+                       9 "Don't know" ;
+label define chdcare_day_cost_1 9999.97 "Not asked" 9999.98 "Not stated" 
+                       9999.99 "Don't know" ;
+label define chdcare_day_cost_2 9999.97 "Not asked" 9999.98 "Not stated" 
+                       9999.99 "Don't know" ;
+label define chdcare_day_cost_3 9999.97 "Not asked" 9999.98 "Not stated" 
+                       9999.99 "Don't know" ;
+label define chdcare_day_cost_4 9999.97 "Not asked" 9999.98 "Not stated" 
+                       9999.99 "Don't know" ;
+label define chdcare_wk_cost_1 9999.97 "Not asked" 9999.98 "Not stated" 
+                       9999.99 "Don't know" ;
+label define chdcare_wk_cost_2 9999.97 "Not asked" 9999.98 "Not stated" 
+                       9999.99 "Don't know" ;
+label define chdcare_wk_cost_3 9999.97 "Not asked" 9999.98 "Not stated" 
+                       9999.99 "Don't know" ;
+label define chdcare_wk_cost_4 9999.97 "Not asked" 9999.98 "Not stated" 
+                       9999.99 "Don't know" ;
+label define chdcare_mth_cost_1 9999.97 "Not asked" 9999.98 "Not stated" 
+                       9999.99 "Don't know" ;
+label define chdcare_mth_cost_2 9999.97 "Not asked" 9999.98 "Not stated" 
+                       9999.99 "Don't know" ;
+label define chdcare_mth_cost_3 9999.97 "Not asked" 9999.98 "Not stated" 
+                       9999.99 "Don't know" ;
+label define chdcare_mth_cost_4 9999.97 "Not asked" 9999.98 "Not stated" 
+                       9999.99 "Don't know" ;
+label define age_hhc_lhom_1c 40.0 "Age 40 and less" 65.0 "Age 65 and more" 
+                       99.4 "Respondent left the household" 
+                       99.5 "Child never left home" 99.7 "Not asked" 
+                       99.8 "Not stated" 99.9 "Don't know" ;
+label define age_hhc_lhom_2c 40.0 "Age 40 and less" 65.0 "Age 65 and over" 
+                       80.0 "80 or more" 99.4 "Respondent left the household" 
+                       99.5 "Child never left home" 99.7 "Not asked" 
+                       99.8 "Not stated" 99.9 "Don't know" ;
+label define age_hhc_lhom_3c 40.0 "Age 40 and less" 65.0 "Age 65 and over" 
+                       80.0 "80 or more" 99.4 "Respondent left the household" 
+                       99.5 "Child never left home" 99.7 "Not asked" 
+                       99.8 "Not stated" 99.9 "Don't know" ;
+label define age_hhc_lhom_4c 40.0 "Age 40 and less" 65.0 "Age 65 and over" 
+                       80.0 "80 or more" 99.4 "Respondent left the household" 
+                       99.5 "Child never left home" 99.7 "Not asked" 
+                       99.8 "Not stated" 99.9 "Don't know" ;
+label define age_hhc_lhom_5c 40.0 "Age 40 and less" 65.0 "Age 65 and over" 
+                       80.0 "80 or more" 99.4 "Respondent left the household" 
+                       99.5 "Child never left home" 99.7 "Not asked" 
+                       99.8 "Not stated" 99.9 "Don't know" ;
+label define age_hhc_lhom_6c 40.0 "Age 40 and less" 65.0 "Age 65 and over" 
+                       80.0 "80 or more" 99.4 "Respondent left the household" 
+                       99.5 "Child never left home" 99.7 "Not asked" 
+                       99.8 "Not stated" 99.9 "Don't know" ;
+label define age_hhc_lhom_7c 40.0 "Age 40 and less" 65.0 "Age 65 and over" 
+                       80.0 "80 or more" 99.4 "Respondent left the household" 
+                       99.5 "Child never left home" 99.7 "Not asked" 
+                       99.8 "Not stated" 99.9 "Don't know" ;
+label define age_nhhc_lhom_1c 30.0 "Age 30 and less" 65.0 "Age 65 and more" 
+                       99.5 "Respondent never lived with child" 
+                       99.7 "Not asked" 99.8 "Not stated" 99.9 "Don't know" ;
+label define age_nhhc_lhom_2c 30.0 "Age 30 and less" 65.0 "Age 65 and more" 
+                       99.5 "Respondent never lived with child" 
+                       99.7 "Not asked" 99.8 "Not stated" 99.9 "Don't know" ;
+label define age_nhhc_lhom_3c 30.0 "Age 30 and less" 65.0 "Age 65 and more" 
+                       99.5 "Respondent never lived with child" 
+                       99.7 "Not asked" 99.8 "Not stated" 99.9 "Don't know" ;
+label define age_nhhc_lhom_4c 30.0 "Age 30 and less" 65.0 "Age 65 and more" 
+                       99.5 "Respondent never lived with child" 
+                       99.7 "Not asked" 99.8 "Not stated" 99.9 "Don't know" ;
+label define age_nhhc_lhom_5c 30.0 "Age 30 and less" 65.0 "Age 65 and more" 
+                       99.5 "Respondent never lived with child" 
+                       99.7 "Not asked" 99.8 "Not stated" 99.9 "Don't know" ;
+label define age_nhhc_lhom_6c 30.0 "Age 30 and less" 65.0 "Age 65 and more" 
+                       99.5 "Respondent never lived with child" 
+                       99.7 "Not asked" 99.8 "Not stated" 99.9 "Don't know" ;
+label define age_nhhc_lhom_7c 30.0 "Age 30 and less" 65.0 "Age 65 and more" 
+                       99.5 "Respondent never lived with child" 
+                       99.7 "Not asked" 99.8 "Not stated" 99.9 "Don't know" ;
+label define age_dcge15_lhom_1 99.7 "Not asked" 99.8 "Not stated" 99.9 "Don't know" ;
+label define age_dcge15_lhom_2 99.7 "Not asked" 99.8 "Not stated" 99.9 "Don't know" ;
+label define age_dcge15_lhom_3 99.7 "Not asked" 99.8 "Not stated" 99.9 "Don't know" ;
+label define age_dcge15_lhom_4 99.7 "Not asked" 99.8 "Not stated" 99.9 "Don't know" ;
+label define age_dcge15_lhom_5 99.7 "Not asked" 99.8 "Not stated" 99.9 "Don't know" ;
+label define age_dcge15_lhom_7 99.7 "Not asked" 99.8 "Not stated" 99.9 "Don't know" ;
+label define rea_nhh_lhom_c01_1 1 "Yes" 2 "No" 7 "Not asked" 8 "Not stated" 
+                       9 "Don't know" ;
+label define rea_nhh_lhom_c01_2 1 "Yes" 2 "No" 7 "Not asked" 8 "Not stated" 
+                       9 "Don't know" ;
+label define rea_nhh_lhom_c01_3 1 "Yes" 2 "No" 7 "Not asked" 8 "Not stated" 
+                       9 "Don't know" ;
+label define rea_nhh_lhom_c01_4 1 "Yes" 2 "No" 7 "Not asked" 8 "Not stated" 
+                       9 "Don't know" ;
+label define rea_hh_lhom_c01_1 1 "Yes" 2 "No" 7 "Not asked" 8 "Not stated" 
+                       9 "Don't know" ;
+label define rea_hh_lhom_c01_2 1 "Yes" 2 "No" 7 "Not asked" 8 "Not stated" 
+                       9 "Don't know" ;
+label define rea_hh_lhom_c01_3 1 "Yes" 2 "No" 7 "Not asked" 8 "Not stated" 
+                       9 "Don't know" ;
+label define rea_hh_lhom_c01_4 1 "Yes" 2 "No" 7 "Not asked" 8 "Not stated" 
+                       9 "Don't know" ;
+label define rea_dc_lhom_c01_1 1 "Yes" 2 "No" 7 "Not asked" 8 "Not stated" 
+                       9 "Don't know" ;
+label define rea_dc_lhom_c01_2 1 "Yes" 2 "No" 7 "Not asked" 8 "Not stated" 
+                       9 "Don't know" ;
+label define rea_dc_lhom_c01_3 1 "Yes" 2 "No" 7 "Not asked" 8 "Not stated" 
+                       9 "Don't know" ;
+label define rea_dc_lhom_c01_4 1 "Yes" 2 "No" 7 "Not asked" 8 "Not stated" 
+                       9 "Don't know" ;
+label define rea_nhh_lhom_c02_1 1 "Yes" 2 "No" 7 "Not asked" 8 "Not stated" 
+                       9 "Don't know" ;
+label define rea_nhh_lhom_c02_2 1 "Yes" 2 "No" 7 "Not asked" 8 "Not stated" 
+                       9 "Don't know" ;
+label define rea_nhh_lhom_c02_3 1 "Yes" 2 "No" 7 "Not asked" 8 "Not stated" 
+                       9 "Don't know" ;
+label define rea_nhh_lhom_c02_4 1 "Yes" 2 "No" 7 "Not asked" 8 "Not stated" 
+                       9 "Don't know" ;
+label define rea_hh_lhom_c02_1 1 "Yes" 2 "No" 7 "Not asked" 8 "Not stated" 
+                       9 "Don't know" ;
+label define rea_hh_lhom_c02_2 1 "Yes" 2 "No" 7 "Not asked" 8 "Not stated" 
+                       9 "Don't know" ;
+label define rea_hh_lhom_c02_3 1 "Yes" 2 "No" 7 "Not asked" 8 "Not stated" 
+                       9 "Don't know" ;
+label define rea_hh_lhom_c02_4 1 "Yes" 2 "No" 7 "Not asked" 8 "Not stated" 
+                       9 "Don't know" ;
+label define rea_dc_lhom_c02_1 1 "Yes" 2 "No" 7 "Not asked" 8 "Not stated" 
+                       9 "Don't know" ;
+label define rea_dc_lhom_c02_2 1 "Yes" 2 "No" 7 "Not asked" 8 "Not stated" 
+                       9 "Don't know" ;
+label define rea_dc_lhom_c02_3 1 "Yes" 2 "No" 7 "Not asked" 8 "Not stated" 
+                       9 "Don't know" ;
+label define rea_dc_lhom_c02_4 1 "Yes" 2 "No" 7 "Not asked" 8 "Not stated" 
+                       9 "Don't know" ;
+label define rea_nhh_lhom_c03_1 1 "Yes" 2 "No" 7 "Not asked" 8 "Not stated" 
+                       9 "Don't know" ;
+label define rea_nhh_lhom_c03_2 1 "Yes" 2 "No" 7 "Not asked" 8 "Not stated" 
+                       9 "Don't know" ;
+label define rea_nhh_lhom_c03_3 1 "Yes" 2 "No" 7 "Not asked" 8 "Not stated" 
+                       9 "Don't know" ;
+label define rea_nhh_lhom_c03_4 1 "Yes" 2 "No" 7 "Not asked" 8 "Not stated" 
+                       9 "Don't know" ;
+label define rea_hh_lhom_c03_1 1 "Yes" 2 "No" 7 "Not asked" 8 "Not stated" 
+                       9 "Don't know" ;
+label define rea_hh_lhom_c03_2 1 "Yes" 2 "No" 7 "Not asked" 8 "Not stated" 
+                       9 "Don't know" ;
+label define rea_hh_lhom_c03_3 1 "Yes" 2 "No" 7 "Not asked" 8 "Not stated" 
+                       9 "Don't know" ;
+label define rea_hh_lhom_c03_4 1 "Yes" 2 "No" 7 "Not asked" 8 "Not stated" 
+                       9 "Don't know" ;
+label define rea_dc_lhom_c03_1 1 "Yes" 2 "No" 7 "Not asked" 8 "Not stated" 
+                       9 "Don't know" ;
+label define rea_dc_lhom_c03_2 1 "Yes" 2 "No" 7 "Not asked" 8 "Not stated" 
+                       9 "Don't know" ;
+label define rea_dc_lhom_c03_3 1 "Yes" 2 "No" 7 "Not asked" 8 "Not stated" 
+                       9 "Don't know" ;
+label define rea_dc_lhom_c03_4 1 "Yes" 2 "No" 7 "Not asked" 8 "Not stated" 
+                       9 "Don't know" ;
+label define rea_nhh_lhom_c04_1 1 "Yes" 2 "No" 7 "Not asked" 8 "Not stated" 
+                       9 "Don't know" ;
+label define rea_nhh_lhom_c04_2 1 "Yes" 2 "No" 7 "Not asked" 8 "Not stated" 
+                       9 "Don't know" ;
+label define rea_nhh_lhom_c04_3 1 "Yes" 2 "No" 7 "Not asked" 8 "Not stated" 
+                       9 "Don't know" ;
+label define rea_nhh_lhom_c04_4 1 "Yes" 2 "No" 7 "Not asked" 8 "Not stated" 
+                       9 "Don't know" ;
+label define rea_hh_lhom_c04_1 1 "Yes" 2 "No" 7 "Not asked" 8 "Not stated" 
+                       9 "Don't know" ;
+label define rea_hh_lhom_c04_2 1 "Yes" 2 "No" 7 "Not asked" 8 "Not stated" 
+                       9 "Don't know" ;
+label define rea_hh_lhom_c04_3 1 "Yes" 2 "No" 7 "Not asked" 8 "Not stated" 
+                       9 "Don't know" ;
+label define rea_hh_lhom_c04_4 1 "Yes" 2 "No" 7 "Not asked" 8 "Not stated" 
+                       9 "Don't know" ;
+label define rea_dc_lhom_c04_1c 1 "Yes" 2 "No" 7 "Not asked" 8 "Not stated" 
+                       9 "Don't know" ;
+label define rea_dc_lhom_c04_2 1 "Yes" 2 "No" 7 "Not asked" 8 "Not stated" 
+                       9 "Don't know" ;
+label define rea_dc_lhom_c04_3 1 "Yes" 2 "No" 7 "Not asked" 8 "Not stated" 
+                       9 "Don't know" ;
+label define rea_dc_lhom_c04_4 1 "Yes" 2 "No" 7 "Not asked" 8 "Not stated" 
+                       9 "Don't know" ;
+label define rea_nhh_lhom_c05_1 1 "Yes" 2 "No" 7 "Not asked" 8 "Not stated" 
+                       9 "Don't know" ;
+label define rea_nhh_lhom_c05_2 1 "Yes" 2 "No" 7 "Not asked" 8 "Not stated" 
+                       9 "Don't know" ;
+label define rea_nhh_lhom_c05_3 1 "Yes" 2 "No" 7 "Not asked" 8 "Not stated" 
+                       9 "Don't know" ;
+label define rea_nhh_lhom_c05_4 1 "Yes" 2 "No" 7 "Not asked" 8 "Not stated" 
+                       9 "Don't know" ;
+label define rea_hh_lhom_c05_1 1 "Yes" 2 "No" 7 "Not asked" 8 "Not stated" 
+                       9 "Don't know" ;
+label define rea_hh_lhom_c05_2 1 "Yes" 2 "No" 7 "Not asked" 8 "Not stated" 
+                       9 "Don't know" ;
+label define rea_hh_lhom_c05_3 1 "Yes" 2 "No" 7 "Not asked" 8 "Not stated" 
+                       9 "Don't know" ;
+label define rea_hh_lhom_c05_4 1 "Yes" 2 "No" 7 "Not asked" 8 "Not stated" 
+                       9 "Don't know" ;
+label define rea_dc_lhom_c05_1 1 "Yes" 2 "No" 7 "Not asked" 8 "Not stated" 
+                       9 "Don't know" ;
+label define rea_dc_lhom_c05_2 1 "Yes" 2 "No" 7 "Not asked" 8 "Not stated" 
+                       9 "Don't know" ;
+label define rea_dc_lhom_c05_3 1 "Yes" 2 "No" 7 "Not asked" 8 "Not stated" 
+                       9 "Don't know" ;
+label define rea_dc_lhom_c05_4 1 "Yes" 2 "No" 7 "Not asked" 8 "Not stated" 
+                       9 "Don't know" ;
+label define rea_nhh_lhom_c06_1 1 "Yes" 2 "No" 7 "Not asked" 8 "Not stated" 
+                       9 "Don't know" ;
+label define rea_nhh_lhom_c06_2 1 "Yes" 2 "No" 7 "Not asked" 8 "Not stated" 
+                       9 "Don't know" ;
+label define rea_nhh_lhom_c06_3 1 "Yes" 2 "No" 7 "Not asked" 8 "Not stated" 
+                       9 "Don't know" ;
+label define rea_nhh_lhom_c06_4 1 "Yes" 2 "No" 7 "Not asked" 8 "Not stated" 
+                       9 "Don't know" ;
+label define rea_hh_lhom_c06_1c 1 "Yes" 2 "No" 7 "Not asked" 8 "Not stated" 
+                       9 "Don't know" ;
+label define rea_hh_lhom_c06_2 1 "Yes" 2 "No" 7 "Not asked" 8 "Not stated" 
+                       9 "Don't know" ;
+label define rea_hh_lhom_c06_3 1 "Yes" 2 "No" 7 "Not asked" 8 "Not stated" 
+                       9 "Don't know" ;
+label define rea_hh_lhom_c06_4 1 "Yes" 2 "No" 7 "Not asked" 8 "Not stated" 
+                       9 "Don't know" ;
+label define rea_dc_lhom_c06_1 1 "Yes" 2 "No" 7 "Not asked" 8 "Not stated" 
+                       9 "Don't know" ;
+label define rea_dc_lhom_c06_2 1 "Yes" 2 "No" 7 "Not asked" 8 "Not stated" 
+                       9 "Don't know" ;
+label define rea_dc_lhom_c06_3 1 "Yes" 2 "No" 7 "Not asked" 8 "Not stated" 
+                       9 "Don't know" ;
+label define rea_dc_lhom_c06_4 1 "Yes" 2 "No" 7 "Not asked" 8 "Not stated" 
+                       9 "Don't know" ;
+label define rea_nhh_lhom_c07_1 1 "Yes" 2 "No" 7 "Not asked" 8 "Not stated" 
+                       9 "Don't know" ;
+label define rea_nhh_lhom_c07_2 1 "Yes" 2 "No" 7 "Not asked" 8 "Not stated" 
+                       9 "Don't know" ;
+label define rea_nhh_lhom_c07_3 1 "Yes" 2 "No" 7 "Not asked" 8 "Not stated" 
+                       9 "Don't know" ;
+label define rea_nhh_lhom_c07_4 1 "Yes" 2 "No" 7 "Not asked" 8 "Not stated" 
+                       9 "Don't know" ;
+label define rea_hh_lhom_c07_1 1 "Yes" 2 "No" 7 "Not asked" 8 "Not stated" 
+                       9 "Don't know" ;
+label define rea_hh_lhom_c07_2 1 "Yes" 2 "No" 7 "Not asked" 8 "Not stated" 
+                       9 "Don't know" ;
+label define rea_hh_lhom_c07_3 1 "Yes" 2 "No" 7 "Not asked" 8 "Not stated" 
+                       9 "Don't know" ;
+label define rea_hh_lhom_c07_4 1 "Yes" 2 "No" 7 "Not asked" 8 "Not stated" 
+                       9 "Don't know" ;
+label define rea_dc_lhom_c07_1 1 "Yes" 2 "No" 7 "Not asked" 8 "Not stated" 
+                       9 "Don't know" ;
+label define rea_dc_lhom_c07_2 1 "Yes" 2 "No" 7 "Not asked" 8 "Not stated" 
+                       9 "Don't know" ;
+label define rea_dc_lhom_c07_3 1 "Yes" 2 "No" 7 "Not asked" 8 "Not stated" 
+                       9 "Don't know" ;
+label define rea_dc_lhom_c07_4 1 "Yes" 2 "No" 7 "Not asked" 8 "Not stated" 
+                       9 "Don't know" ;
+label define rea_nhh_lhom_c08_1 1 "Yes" 2 "No" 7 "Not asked" 8 "Not stated" 
+                       9 "Don't know" ;
+label define rea_nhh_lhom_c08_2 1 "Yes" 2 "No" 7 "Not asked" 8 "Not stated" 
+                       9 "Don't know" ;
+label define rea_nhh_lhom_c08_3 1 "Yes" 2 "No" 7 "Not asked" 8 "Not stated" 
+                       9 "Don't know" ;
+label define rea_nhh_lhom_c08_4 1 "Yes" 2 "No" 7 "Not asked" 8 "Not stated" 
+                       9 "Don't know" ;
+label define rea_hh_lhom_c08_1 1 "Yes" 2 "No" 7 "Not asked" 8 "Not stated" 
+                       9 "Don't know" ;
+label define rea_hh_lhom_c08_2 1 "Yes" 2 "No" 7 "Not asked" 8 "Not stated" 
+                       9 "Don't know" ;
+label define rea_hh_lhom_c08_3 1 "Yes" 2 "No" 7 "Not asked" 8 "Not stated" 
+                       9 "Don't know" ;
+label define rea_hh_lhom_c08_4 1 "Yes" 2 "No" 7 "Not asked" 8 "Not stated" 
+                       9 "Don't know" ;
+label define rea_dc_lhom_c08_1c 1 "Yes" 2 "No" 7 "Not asked" 8 "Not stated" 
+                       9 "Don't know" ;
+label define rea_dc_lhom_c08_2 1 "Yes" 2 "No" 7 "Not asked" 8 "Not stated" 
+                       9 "Don't know" ;
+label define rea_dc_lhom_c08_3 1 "Yes" 2 "No" 7 "Not asked" 8 "Not stated" 
+                       9 "Don't know" ;
+label define rea_dc_lhom_c08_4 1 "Yes" 2 "No" 7 "Not asked" 8 "Not stated" 
+                       9 "Don't know" ;
+label define rea_nhh_lhom_c09_1 1 "Yes" 2 "No" 7 "Not asked" 8 "Not stated" 
+                       9 "Don't know" ;
+label define rea_nhh_lhom_c09_2 1 "Yes" 2 "No" 7 "Not asked" 8 "Not stated" 
+                       9 "Don't know" ;
+label define rea_nhh_lhom_c09_3 1 "Yes" 2 "No" 7 "Not asked" 8 "Not stated" 
+                       9 "Don't know" ;
+label define rea_nhh_lhom_c09_4 1 "Yes" 2 "No" 7 "Not asked" 8 "Not stated" 
+                       9 "Don't know" ;
+label define rea_hh_lhom_c09_1c 1 "Yes" 2 "No" 7 "Not asked" 8 "Not stated" 
+                       9 "Don't know" ;
+label define rea_hh_lhom_c09_2 1 "Yes" 2 "No" 7 "Not asked" 8 "Not stated" 
+                       9 "Don't know" ;
+label define rea_hh_lhom_c09_3 1 "Yes" 2 "No" 7 "Not asked" 8 "Not stated" 
+                       9 "Don't know" ;
+label define rea_hh_lhom_c09_4 1 "Yes" 2 "No" 7 "Not asked" 8 "Not stated" 
+                       9 "Don't know" ;
+label define rea_dc_lhom_c09_1c 1 "Yes" 2 "No" 7 "Not asked" 8 "Not stated" 
+                       9 "Don't know" ;
+label define rea_dc_lhom_c09_2 1 "Yes" 2 "No" 7 "Not asked" 8 "Not stated" 
+                       9 "Don't know" ;
+label define rea_dc_lhom_c09_3 1 "Yes" 2 "No" 7 "Not asked" 8 "Not stated" 
+                       9 "Don't know" ;
+label define rea_dc_lhom_c09_4 1 "Yes" 2 "No" 7 "Not asked" 8 "Not stated" 
+                       9 "Don't know" ;
+label define com_q105  1 "Mostly you" 2 "Mostly your spouse/partner" 
+                       3 "Shared equally" 4 "Neither" 7 "Not asked" 
+                       8 "Not stated" 9 "Don't know" ;
+label define com_q110  1 "Mostly you" 2 "Mostly your spouse/partner" 
+                       3 "Shared equally" 4 "Neither" 7 "Not asked" 
+                       8 "Not stated" 9 "Don't know" ;
+label define com_q115  1 "Mostly you" 2 "Mostly your spouse/partner" 
+                       3 "Shared equally" 4 "Neither" 7 "Not asked" 
+                       8 "Not stated" 9 "Don't know" ;
+label define com_q120  1 "Mostly you" 2 "Mostly your spouse/partner" 
+                       3 "Shared equally" 4 "Neither" 7 "Not asked" 
+                       8 "Not stated" 9 "Don't know" ;
+label define com_q125  1 "Mostly you" 2 "Mostly your spouse/partner" 
+                       3 "Shared equally" 4 "Neither" 7 "Not asked" 
+                       8 "Not stated" 9 "Don't know" ;
+label define com_q130  1 "Mostly you" 2 "Mostly your spouse/partner" 
+                       3 "Shared equally" 4 "Neither" 5 "Not applicable" 
+                       7 "Not asked" 8 "Not stated" 9 "Don't know" ;
+label define com_q135  1 "Mostly you" 2 "Mostly your spouse/partner" 
+                       3 "Shared equally" 4 "Neither" 5 "Not applicable" 
+                       7 "Not asked" 8 "Not stated" 9 "Don't know" ;
+label define com_q140  1 "Mostly you" 2 "Mostly your spouse/partner" 
+                       3 "Shared equally" 4 "Neither" 7 "Not asked" 
+                       8 "Not stated" 9 "Don't know" ;
+label define com_q145  1 "Mostly you" 2 "Mostly your spouse/partner" 
+                       3 "Shared equally" 4 "Neither" 7 "Not asked" 
+                       8 "Not stated" 9 "Don't know" ;
+label define com_q150  1 "Mostly you" 2 "Mostly your spouse/partner" 
+                       3 "Shared equally" 4 "Neither" 7 "Not asked" 
+                       8 "Not stated" 9 "Don't know" ;
+label define com_q155  1 "Mostly you" 2 "Mostly your spouse/partner" 
+                       3 "Shared equally" 4 "Neither" 7 "Not asked" 
+                       8 "Not stated" 9 "Don't know" ;
+label define com_q200  1 "Sole account only" 2 "Joint account only" 
+                       3 "Both sole and joint or mortgage account" 
+                       7 "Not asked" 8 "Not stated" 9 "Don't know" ;
+label define com_q205_c01 1 "Yes" 2 "No" 7 "Not asked" 8 "Not stated" 
+                       9 "Don't know" ;
+label define com_q205_c02 1 "Yes" 2 "No" 7 "Not asked" 8 "Not stated" 
+                       9 "Don't know" ;
+label define com_q205_c03 1 "Yes" 2 "No" 7 "Not asked" 8 "Not stated" 
+                       9 "Don't know" ;
+label define com_q205_c04 1 "Yes" 2 "No" 7 "Not asked" 8 "Not stated" 
+                       9 "Don't know" ;
+label define com_q205_c05 1 "Yes" 2 "No" 7 "Not asked" 8 "Not stated" 
+                       9 "Don't know" ;
+label define com_q210_c01 1 "Yes" 2 "No" 7 "Not asked" 8 "Not stated" 
+                       9 "Don't know" ;
+label define com_q210_c02 1 "Yes" 2 "No" 7 "Not asked" 8 "Not stated" 
+                       9 "Don't know" ;
+label define com_q210_c03 1 "Yes" 2 "No" 7 "Not asked" 8 "Not stated" 
+                       9 "Don't know" ;
+label define com_q210_c04 1 "Yes" 2 "No" 7 "Not asked" 8 "Not stated" 
+                       9 "Don't know" ;
+label define com_q210_c05 1 "Yes" 2 "No" 7 "Not asked" 8 "Not stated" 
+                       9 "Don't know" ;
+label define com_q212  
+                       1 "... equal with each of you paying half of all bills?" 
+                       2 "... equal with each of you covering specific expenses?" 
+                       3 "... determined according to your wages?" 
+                       4 "... determined based on who has the money when bills need to be paid?" 
+                       5 "Other arrangement" 7 "Not asked" 8 "Not stated" 
+                       9 "Don't know" ;
+label define com_q215  1 "... for all?" 2 "... for more than half?" 
+                       3 "... for half?" 4 "... for less than half?" 
+                       5 "... or you do not pay?" 6 "Don't have a mortgage" 
+                       7 "Not asked" 8 "Not stated" 9 "Don't know" ;
+label define com_q220  1 "All" 2 "More than half" 3 "Half" 4 "Less than half" 
+                       5 "Do not pay" 7 "Not asked" 8 "Not stated" 
+                       9 "Don't know" ;
+label define com_q225  1 "All" 2 "More than half" 3 "Half" 4 "Less than half" 
+                       5 "Do not pay" 7 "Not asked" 8 "Not stated" 
+                       9 "Don't know" ;
+label define com_q230  1 "All" 2 "More than half" 3 "Half" 4 "Less than half" 
+                       5 "Do not pay" 7 "Not asked" 8 "Not stated" 
+                       9 "Don't know" ;
+label define com_q235  1 "Yes" 2 "No" 7 "Not asked" 8 "Not stated" 
+                       9 "Don't know" ;
+label define fr_q100   1 "Yes" 2 "No" 3 "Not applicable" 7 "Not asked" 
+                       8 "Not stated" 9 "Don't know" ;
+label define fr_q110   1 "Yes" 2 "No" 3 "Not applicable" 7 "Not asked" 
+                       8 "Not stated" 9 "Don't know" ;
+label define fr_q120   1 "Yes" 2 "No" 3 "Not applicable" 7 "Not asked" 
+                       8 "Not stated" 9 "Don't know" ;
+label define fr_q130_c01 1 "Yes" 2 "No" 7 "Not asked" 8 "Not stated" 
+                       9 "Don't know" ;
+label define fr_q130_c02 1 "Yes" 2 "No" 7 "Not asked" 8 "Not stated" 
+                       9 "Don't know" ;
+label define fr_q130_c03 1 "Yes" 2 "No" 7 "Not asked" 8 "Not stated" 
+                       9 "Don't know" ;
+label define fr_q130_c04 1 "Yes" 2 "No" 7 "Not asked" 8 "Not stated" 
+                       9 "Don't know" ;
+label define fr_q130_c05 1 "Yes" 2 "No" 7 "Not asked" 8 "Not stated" 
+                       9 "Don't know" ;
+label define fr_q130_c06 1 "Yes" 2 "No" 7 "Not asked" 8 "Not stated" 
+                       9 "Don't know" ;
+label define fr_q130_c07 1 "Yes" 2 "No" 7 "Not asked" 8 "Not stated" 
+                       9 "Don't know" ;
+label define fr_q130_c08 1 "Yes" 2 "No" 7 "Not asked" 8 "Not stated" 
+                       9 "Don't know" ;
+label define fr_q130_c09 1 "Yes" 2 "No" 7 "Not asked" 8 "Not stated" 
+                       9 "Don't know" ;
+label define fr_q140   1 "...very easily?" 2 "...easily?" 
+                       3 "...with difficulty?" 4 "...with great difficulty?" 
+                       7 "Not asked" 8 "Not stated" 9 "Don't know" ;
+label define pr_preg   1 "Yes" 2 "No" 7 "Not asked" 8 "Not stated" 
+                       9 "Don't know" ;
+label define fi_q110   1 "Yes" 2 "No" 7 "Not asked" 8 "Not stated" 
+                       9 "Don't know" ;
+label define no_chric  5 "5 or more" 7 "Not asked" 8 "Not stated" 
+                       9 "Don't know" ;
+label define fi_q125   1 "...in the next year?" 2 "...in 2 years?" 
+                       3 "...in 3 or more years?" 4 "Uncertain/not discussed" 
+                       7 "Not asked" 8 "Not stated" 9 "Don't know" ;
+label define fi_q130   1 "Yes" 2 "No" 7 "Not asked" 8 "Not stated" 
+                       9 "Don't know" ;
+label define fi_q131   1 "Contraception" 2 "Medical reasons" 3 "Both" 
+                       7 "Not asked" 8 "Not stated" 9 "Don't know" ;
+label define fi_q140   1 "Yes" 2 "No" 7 "Not asked" 8 "Not stated" 
+                       9 "Don't know" ;
+label define fi_q230   1 "Yes" 2 "No" 7 "Not asked" 8 "Not stated" 
+                       9 "Don't know" ;
+label define fi_q231   1 "Contraception" 2 "Medical reasons" 3 "Both" 
+                       7 "Not asked" 8 "Not stated" 9 "Don't know" ;
+label define fi_q240   1 "Yes" 2 "No" 7 "Not asked" 8 "Not stated" 
+                       9 "Don't know" ;
+label define fi_q305   1 "Yes" 2 "No" 7 "Not asked" 8 "Not stated" 
+                       9 "Don't know" ;
+label define fi_q310_c01 1 "Yes" 2 "No" 7 "Not asked" 8 "Not stated" 
+                       9 "Don't know" ;
+label define fi_q310_c02 1 "Yes" 2 "No" 7 "Not asked" 8 "Not stated" 
+                       9 "Don't know" ;
+label define fi_q310_c03 1 "Yes" 2 "No" 7 "Not asked" 8 "Not stated" 
+                       9 "Don't know" ;
+label define fi_q310_c04 1 "Yes" 2 "No" 7 "Not asked" 8 "Not stated" 
+                       9 "Don't know" ;
+label define fi_q310_c05 1 "Yes" 2 "No" 7 "Not asked" 8 "Not stated" 
+                       9 "Don't know" ;
+label define fi_q310_c06 1 "Yes" 2 "No" 7 "Not asked" 8 "Not stated" 
+                       9 "Don't know" ;
+label define fi_q310_c07c 1 "Yes" 2 "No" 7 "Not asked" 8 "Not stated" 
+                       9 "Don't know" ;
+label define fi_q310_c08 1 "Yes" 2 "No" 7 "Not asked" 8 "Not stated" 
+                       9 "Don't know" ;
+label define fi_q310_c09 1 "Yes" 2 "No" 7 "Not asked" 8 "Not stated" 
+                       9 "Don't know" ;
+label define fi_q310_c10 1 "Yes" 2 "No" 7 "Not asked" 8 "Not stated" 
+                       9 "Don't know" ;
+label define fi_q310_c11c 1 "Yes" 2 "No" 7 "Not asked" 8 "Not stated" 
+                       9 "Don't know" ;
+label define nic_q100_c01 1 "Yes" 2 "No" 7 "Not asked" 8 "Not stated" 
+                       9 "Don't know" ;
+label define nic_q100_c02 1 "Yes" 2 "No" 7 "Not asked" 8 "Not stated" 
+                       9 "Don't know" ;
+label define nic_q100_c03 1 "Yes" 2 "No" 7 "Not asked" 8 "Not stated" 
+                       9 "Don't know" ;
+label define nic_q100_c04 1 "Yes" 2 "No" 7 "Not asked" 8 "Not stated" 
+                       9 "Don't know" ;
+label define nic_q100_c05 1 "Yes" 2 "No" 7 "Not asked" 8 "Not stated" 
+                       9 "Don't know" ;
+label define nic_q100_c06 1 "Yes" 2 "No" 7 "Not asked" 8 "Not stated" 
+                       9 "Don't know" ;
+label define nic_q100_c07 1 "Yes" 2 "No" 7 "Not asked" 8 "Not stated" 
+                       9 "Don't know" ;
+label define nic_q100_c08 1 "Yes" 2 "No" 7 "Not asked" 8 "Not stated" 
+                       9 "Don't know" ;
+label define nic_q100_c09 1 "Yes" 2 "No" 7 "Not asked" 8 "Not stated" 
+                       9 "Don't know" ;
+label define nic_q100_c10 1 "Yes" 2 "No" 7 "Not asked" 8 "Not stated" 
+                       9 "Don't know" ;
+label define nic_q100_c11 1 "Yes" 2 "No" 7 "Not asked" 8 "Not stated" 
+                       9 "Don't know" ;
+label define fic_q100  1 "Yes" 2 "No" 7 "Not asked" 8 "Not stated" 
+                       9 "Don't know" ;
+label define fic_q110  1 "Yes" 2 "No" 7 "Not asked" 8 "Not stated" 
+                       9 "Don't know" ;
+label define fic_q120  1 "Yes" 2 "No" 7 "Not asked" 8 "Not stated" 
+                       9 "Don't know" ;
+label define f_crt_d210 1 "Yes" 2 "No" ;
+label define mpl_q105_c01 1 "Yes" 2 "No" 7 "Not asked" 8 "Not stated" 
+                       9 "Don't know" ;
+label define mpl_q105_c02 1 "Yes" 2 "No" 7 "Not asked" 8 "Not stated" 
+                       9 "Don't know" ;
+label define mpl_q105_c03 1 "Yes" 2 "No" 7 "Not asked" 8 "Not stated" 
+                       9 "Don't know" ;
+label define mpl_q105_c04 1 "Yes" 2 "No" 7 "Not asked" 8 "Not stated" 
+                       9 "Don't know" ;
+label define mpl_q105_c05 1 "Yes" 2 "No" 7 "Not asked" 8 "Not stated" 
+                       9 "Don't know" ;
+label define mpl_q105_c06 1 "Yes" 2 "No" 7 "Not asked" 8 "Not stated" 
+                       9 "Don't know" ;
+label define mpl_q105_c07 1 "Yes" 2 "No" 7 "Not asked" 8 "Not stated" 
+                       9 "Don't know" ;
+label define mpl_q105_c08c 1 "Yes" 2 "No" 7 "Not asked" 8 "Not stated" 
+                       9 "Don't know" ;
+label define mpl_q105_c09c 1 "Yes" 2 "No" 7 "Not asked" 8 "Not stated" 
+                       9 "Don't know" ;
+label define mpl_q107  1 "Full-time" 2 "Part-time" 7 "Not asked" 
+                       8 "Not stated" 9 "Don't know" ;
+label define mpl_q108  1 "Yes" 2 "No" 7 "Not asked" 8 "Not stated" 
+                       9 "Don't know" ;
+label define rto_q100  1 "... a paid worker?" 2 "... self-employed?" 
+                       3 "... an unpaid family worker?" 7 "Not asked" 
+                       8 "Not stated" 9 "Don't know" ;
+label define rto_q101  1 "Full-time" 2 "Part-time" 
+                       3 "Other (on call, contract)" 7 "Not asked" 
+                       8 "Not stated" 9 "Don't know" ;
+label define rto_q110  1 "Yes" 2 "No" 7 "Not asked" 8 "Not stated" 
+                       9 "Don't know" ;
+label define rto_q120  1 "Other parent took leave" 2 "Not eligible for leave" 
+                       3 "Could not afford to lose a/my salary" 
+                       4 "Worried of losing job" 
+                       5 "Family or friends take care of child" 
+                       6 "Found available/convenient daycare" 
+                       7 "Preferred to work" 
+                       8 "Job permitted to take care of the child and work" 
+                       9 "Quit job due to pregnancy/adoption" 10 "Other" 
+                       97 "Not asked" 98 "Not stated" 99 "Don't know" ;
+label define rto_q130_c01 1 "Yes" 2 "No" 7 "Not asked" 8 "Not stated" 
+                       9 "Don't know" ;
+label define rto_q130_c02 1 "Yes" 2 "No" 7 "Not asked" 8 "Not stated" 
+                       9 "Don't know" ;
+label define rto_q130_c03 1 "Yes" 2 "No" 7 "Not asked" 8 "Not stated" 
+                       9 "Don't know" ;
+label define rto_q130_c04 1 "Yes" 2 "No" 7 "Not asked" 8 "Not stated" 
+                       9 "Don't know" ;
+label define rto_q130_c05 1 "Yes" 2 "No" 7 "Not asked" 8 "Not stated" 
+                       9 "Don't know" ;
+label define rto_q130_c06 1 "Yes" 2 "No" 7 "Not asked" 8 "Not stated" 
+                       9 "Don't know" ;
+label define rto_q130_c07 1 "Yes" 2 "No" 7 "Not asked" 8 "Not stated" 
+                       9 "Don't know" ;
+label define oto_q100  1 "Yes" 2 "No" 
+                       3 "Not applicable - Other parent was not working before birth/adoption" 
+                       4 "No other parent involved" 7 "Not asked" 
+                       8 "Not stated" 9 "Don't know" ;
+label define oto_q110_c01 1 "Yes" 2 "No" 7 "Not asked" 8 "Not stated" 
+                       9 "Don't know" ;
+label define oto_q110_c02 1 "Yes" 2 "No" 7 "Not asked" 8 "Not stated" 
+                       9 "Don't know" ;
+label define oto_q110_c03 1 "Yes" 2 "No" 7 "Not asked" 8 "Not stated" 
+                       9 "Don't know" ;
+label define oto_q110_c04 1 "Yes" 2 "No" 7 "Not asked" 8 "Not stated" 
+                       9 "Don't know" ;
+label define oto_q110_c05 1 "Yes" 2 "No" 7 "Not asked" 8 "Not stated" 
+                       9 "Don't know" ;
+label define oto_q110_c06 1 "Yes" 2 "No" 7 "Not asked" 8 "Not stated" 
+                       9 "Don't know" ;
+label define oto_q110_c07 1 "Yes" 2 "No" 7 "Not asked" 8 "Not stated" 
+                       9 "Don't know" ;
+label define rrb_q100  1 "Yes" 2 "No" 7 "Not asked" 8 "Not stated" 
+                       9 "Don't know" ;
+label define rrb_q110c 70 "70 or more" 997 "Not asked" 998 "Not stated" 
+                       999 "Don't know" ;
+label define rrb_q120  1 "Self-employed" 2 "Not contributing to the program" 
+                       3 "Did not work enough" 
+                       4 "Benefits too low (not worth it)" 
+                       5 "Other parent collected maternity/paternity benefits" 
+                       6 "Did not know enough about the program" 
+                       7 "Did not apply for benefits (too much trouble)" 
+                       8 "Did not need benefits (have other sources of income)" 
+                       9 "Other" 97 "Not asked" 98 "Not stated" 
+                       99 "Don't know" ;
+label define orb_q100  1 "Yes" 2 "No" 7 "Not asked" 8 "Not stated" 
+                       9 "Don't know" ;
+label define orb_q110c 53 "53 or more" 997 "Not asked" 998 "Not stated" 
+                       999 "Don't know" ;
+label define sbr_q100  1 "Yes" 2 "No" 7 "Not asked" 8 "Not stated" 
+                       9 "Don't know" ;
+label define sbr_q110c 52 "52 weeks or more" 997 "Not asked" 998 "Not stated" 
+                       999 "Don't know" ;
+label define age_dsw_q101c 20.0 "Age 20 and less" 45.0 "Age 45 and over" 
+                       99.7 "Not asked" 99.8 "Not stated" 99.9 "Don't know" ;
+label define dsw_q110  1 "Yes" 2 "No" 7 "Not asked" 8 "Not stated" 
+                       9 "Don't know" ;
+label define agechd_backtowork 99.7 "Not asked" 99.8 "Not stated" 99.9 "Don't know" ;
+label define rtw_q130  1 "Full-time" 2 "Part-time" 
+                       3 "Other (on call, contract)" 7 "Not asked" 
+                       8 "Not stated" 9 "Don't know" ;
+label define rtw_q140  1 "Yes" 2 "No" 7 "Not asked" 8 "Not stated" 
+                       9 "Don't know" ;
+label define rtw_q200  1 "Yes" 2 "No" 7 "Not asked" 8 "Not stated" 
+                       9 "Don't know" ;
+label define rtw_q210  1 "Yes" 2 "No" 7 "Not asked" 8 "Not stated" 
+                       9 "Don't know" ;
+label define rtw_q220  1 "Yes" 2 "No" 7 "Not asked" 8 "Not stated" 
+                       9 "Don't know" ;
+label define rtw_q230  1 "Yes" 2 "No" 7 "Not asked" 8 "Not stated" 
+                       9 "Don't know" ;
+label define rtw_q240c 1 "Salary wouldn't have been sufficient" 
+                       2 "Difficult to find adequate day care" 
+                       3 "Job requirement" 
+                       4 "Not to lose job/To safeguard career" 
+                       5 "Employer asked" 6 "Other" 7 "Not asked" 
+                       8 "Not stated" 9 "Don't know" ;
+label define rtw_q250c 1 "Financial situation permitted" 
+                       2 "Employer permitted" 
+                       3 "Gradual come back, facilitate transition" 
+                       4 "Work requirement" 
+                       5 "To stay longer with child(ren)" 
+                       6 "Did not find day care" 7 "Sickness or disability" 
+                       8 "Other" 97 "Not asked" 98 "Not stated" 
+                       99 "Don't know" ;
+label define wsl_q100  1 "Yes" 2 "No" 7 "Not asked" 8 "Not stated" 
+                       9 "Don't know" ;
+label define wsl_q110_c01 1 "Yes" 2 "No" 7 "Not asked" 8 "Not stated" 
+                       9 "Don't know" ;
+label define wsl_q110_c02 1 "Yes" 2 "No" 7 "Not asked" 8 "Not stated" 
+                       9 "Don't know" ;
+label define wsl_q110_c03 1 "Yes" 2 "No" 7 "Not asked" 8 "Not stated" 
+                       9 "Don't know" ;
+label define wsl_q110_c04 1 "Yes" 2 "No" 7 "Not asked" 8 "Not stated" 
+                       9 "Don't know" ;
+label define wsl_q110_c05 1 "Yes" 2 "No" 7 "Not asked" 8 "Not stated" 
+                       9 "Don't know" ;
+label define wsl_q110_c06 1 "Yes" 2 "No" 7 "Not asked" 8 "Not stated" 
+                       9 "Don't know" ;
+label define f_sep_div_last20yrs 1 "Yes" 2 "No" ;
+label define lds_q100  1 "Yes" 2 "No" 7 "Not asked" 8 "Not stated" 
+                       9 "Don't know" ;
+label define lds_q110  97 "Not asked" 98 "Not stated" 99 "Don't know" ;
+label define prc_q100_c01 1 "Yes" 2 "No" 7 "Not asked" 8 "Not stated" 
+                       9 "Don't know" ;
+label define prc_q100_c02 1 "Yes" 2 "No" 7 "Not asked" 8 "Not stated" 
+                       9 "Don't know" ;
+label define prc_q100_c03 1 "Yes" 2 "No" 7 "Not asked" 8 "Not stated" 
+                       9 "Don't know" ;
+label define prc_q100_c04 1 "Yes" 2 "No" 7 "Not asked" 8 "Not stated" 
+                       9 "Don't know" ;
+label define prc_q110_c01 1 "Yes" 2 "No" 7 "Not asked" 8 "Not stated" 
+                       9 "Don't know" ;
+label define prc_q110_c02 1 "Yes" 2 "No" 7 "Not asked" 8 "Not stated" 
+                       9 "Don't know" ;
+label define prc_q110_c03 1 "Yes" 2 "No" 7 "Not asked" 8 "Not stated" 
+                       9 "Don't know" ;
+label define prc_q110_c04 1 "Yes" 2 "No" 7 "Not asked" 8 "Not stated" 
+                       9 "Don't know" ;
+label define prc_q110_c05 1 "Yes" 2 "No" 7 "Not asked" 8 "Not stated" 
+                       9 "Don't know" ;
+label define prc_q110_c06 1 "Yes" 2 "No" 7 "Not asked" 8 "Not stated" 
+                       9 "Don't know" ;
+label define prc_q110_c07 1 "Yes" 2 "No" 7 "Not asked" 8 "Not stated" 
+                       9 "Don't know" ;
+label define prc_q115c 1 "... in the same province?" 
+                       2 "... in a different province or territory?" 
+                       3 "... in another country?" 7 "Not asked" 
+                       8 "Not stated" 9 "Don't know" ;
+label define prc_q120  1 "... a verbal arrangement?" 
+                       2 "... a written arrangement?" 
+                       3 "No arrangement or agreement?" 7 "Not asked" 
+                       8 "Not stated" 9 "Don't know" ;
+label define prc_q130_c01 1 "Yes" 2 "No" 7 "Not asked" 8 "Not stated" 
+                       9 "Don't know" ;
+label define prc_q130_c02 1 "Yes" 2 "No" 7 "Not asked" 8 "Not stated" 
+                       9 "Don't know" ;
+label define prc_q130_c03 1 "Yes" 2 "No" 7 "Not asked" 8 "Not stated" 
+                       9 "Don't know" ;
+label define prc_q130_c04 1 "Yes" 2 "No" 7 "Not asked" 8 "Not stated" 
+                       9 "Don't know" ;
+label define prc_q130_c05 1 "Yes" 2 "No" 7 "Not asked" 8 "Not stated" 
+                       9 "Don't know" ;
+label define npr_q100  1 "Agreement not needed, amicable situation" 
+                       2 "Conflict with ex-spouse/ex-partner (can not come to agreement)" 
+                       3 "Not yet finalized, situation is recent" 
+                       4 "Can't locate/lost contact with ex-spouse/ex-partner" 
+                       5 "Child does not live with either parent" 
+                       6 "Child has not decided" 
+                       7 "Inappropriate behaviour of ex-spouse/ex-partner (violence, abuse, mental health issues)" 
+                       8 "Other" 97 "Not asked" 98 "Not stated" 
+                       99 "Don't know" ;
+label define ats_q120  1 "... a verbal arrangement?" 
+                       2 "... a written arrangement?" 
+                       3 "No arrangement or agreement" 
+                       4 "Same arrangement as primary residence?" 
+                       7 "Not asked" 8 "Not stated" 9 "Don't know" ;
+label define ats_q130_c01 1 "Yes" 2 "No" 7 "Not asked" 8 "Not stated" 
+                       9 "Don't know" ;
+label define ats_q130_c02 1 "Yes" 2 "No" 7 "Not asked" 8 "Not stated" 
+                       9 "Don't know" ;
+label define ats_q130_c03 1 "Yes" 2 "No" 7 "Not asked" 8 "Not stated" 
+                       9 "Don't know" ;
+label define ats_q130_c04 1 "Yes" 2 "No" 7 "Not asked" 8 "Not stated" 
+                       9 "Don't know" ;
+label define ats_q130_c05 1 "Yes" 2 "No" 7 "Not asked" 8 "Not stated" 
+                       9 "Don't know" ;
+label define ats_q140  1 "... all of the time?" 2 "... most of the time?" 
+                       3 "... sometimes?" 4 "... rarely?" 5 "... never?" 
+                       7 "Not asked" 8 "Not stated" 9 "Don't know" ;
+label define ats_q145  1 "Arrangement no longer worked for the child(ren)" 
+                       2 "Changes in circumstances of the child (e.g., living somewhere else)" 
+                       3 "Change in circumstances of either parent (e.g., repartnering, other life events)" 
+                       4 "General conflict with ex-spouse/ex-partner" 
+                       5 "Ex-spouse/ex-partner regularly cancelled my time with the child" 
+                       6 "Ex-spouse/ex-partner regularly cancelled his/her time with the child" 
+                       7 "Change in distance between households" 
+                       8 "Inappropriate behaviour of ex-spouse/ex-partner (violence, abuse, mental health issues)" 
+                       9 "Other" 97 "Not asked" 98 "Not stated" 
+                       99 "Don't know" ;
+label define nts_q100c 1 "Agreement not needed, amicable situation" 
+                       2 "Conflict with ex-spouse/ex-partner (can not come to agreement))" 
+                       3 "Not yet finalized, situation is recent" 
+                       4 "Can't locate/lost contact with ex-spouse/ex-partner" 
+                       5 "Child does not live with either parent" 
+                       6 "Child has not decided" 
+                       7 "Inappropriate behaviour of ex-spouse/ex-partner (violence, abuse, mental health issues)" 
+                       8 "Other" 9 "Child(ren)'s decision" 10 "Distance" 
+                       97 "Not asked" 98 "Not stated" 99 "Don't know" ;
+label define days_tshq110_l12m 997 "Not asked" 998 "Not stated" 999 "Don't know" ;
+label define tsc_q410  1 "... very satisfied?" 2 "... satisfied?" 
+                       3 "... dissatisfied?" 4 "... very dissatisfied?" 
+                       7 "Not asked" 8 "Not stated" 9 "Don't know" ;
+label define tsc_q450  1 "... very satisfied?" 2 "... satisfied?" 
+                       3 "... dissatisfied?" 4 "... very dissatisfied?" 
+                       7 "Not asked" 8 "Not stated" 9 "Don't know" ;
+label define tsc_q460c 
+                       1 "Ex-spouse/partner often changes his/her time with the child at last minute" 
+                       2 "Ex-spouse/partner cancels time with the child and does not reschedule" 
+                       3 "Would like ex-spouse/partner to spend more time with child(ren)" 
+                       4 "Woule like ex-spouse/partner to have a smaller share of time with child(ren)" 
+                       5 "Concerned about poor behaviour/parenting from the ex-spouse/partner" 
+                       6 "Other" 7 "Not asked" 8 "Not stated" 9 "Don't know" ;
+label define mdc_q117  
+                       1 "... you and your ex-spouse/ex-partner together or alternatively?" 
+                       2 "... mainly you?" 
+                       3 "... mainly your ex-spouse/ex-partner?" 
+                       4 "... someone else?" 
+                       5 "Varies depending on what the decision is" 6 "Other" 
+                       7 "Not asked" 8 "Not stated" 9 "Don't know" ;
+label define fse_q100  1 "Yes, provided financial support" 
+                       2 "Yes, received financial support" 
+                       3 "Yes, I have provided and received" 
+                       4 "No, did not provide nor receive" 7 "Not asked" 
+                       8 "Not stated" 9 "Don't know" ;
+label define fse_q105  1 "Yes, providing financial support" 
+                       2 "Yes, receiving financial support" 
+                       3 "Yes, providing and receiving" 
+                       4 "No, neither providing nor receiving" 7 "Not asked" 
+                       8 "Not stated" 9 "Don't know" ;
+label define fse_q110_c01 1 "Yes" 2 "No" 7 "Not asked" 8 "Not stated" 
+                       9 "Don't know" ;
+label define fse_q110_c02 1 "Yes" 2 "No" 7 "Not asked" 8 "Not stated" 
+                       9 "Don't know" ;
+label define fse_q110_c03 1 "Yes" 2 "No" 7 "Not asked" 8 "Not stated" 
+                       9 "Don't know" ;
+label define fse_q110_c04c 1 "Yes" 2 "No" 7 "Not asked" 8 "Not stated" 
+                       9 "Don't know" ;
+label define fse_q110_c05c 1 "Yes" 2 "No" 7 "Not asked" 8 "Not stated" 
+                       9 "Don't know" ;
+label define fse_q110_c06 1 "Yes" 2 "No" 7 "Not asked" 8 "Not stated" 
+                       9 "Don't know" ;
+label define fse_q110_c07 1 "Yes" 2 "No" 7 "Not asked" 8 "Not stated" 
+                       9 "Don't know" ;
+label define csp_q100  1 "Yes, provided financial support" 
+                       2 "Yes, received financial support" 
+                       3 "Yes, provided and received" 
+                       4 "No, did not provide nor receive" 7 "Not asked" 
+                       8 "Not stated" 9 "Don't know" ;
+label define csp_q105  1 "Yes, providing financial support" 
+                       2 "Yes, receiving financial support" 
+                       3 "Yes, providing and receiving" 
+                       4 "No, neither providing nor receiving" 7 "Not asked" 
+                       8 "Not stated" 9 "Don't know" ;
+label define csp_q110_c01 1 "Yes" 2 "No" 7 "Not asked" 8 "Not stated" 
+                       9 "Don't know" ;
+label define csp_q110_c02 1 "Yes" 2 "No" 7 "Not asked" 8 "Not stated" 
+                       9 "Don't know" ;
+label define csp_q110_c03 1 "Yes" 2 "No" 7 "Not asked" 8 "Not stated" 
+                       9 "Don't know" ;
+label define csp_q110_c04 1 "Yes" 2 "No" 7 "Not asked" 8 "Not stated" 
+                       9 "Don't know" ;
+label define csp_q110_c05 1 "Yes" 2 "No" 7 "Not asked" 8 "Not stated" 
+                       9 "Don't know" ;
+label define csp_q150  1 "... a verbal arrangement?" 
+                       2 "... a written arrangement?" 
+                       3 "No arrangement/agreement" 
+                       4 "Same agreement as primary residence" 
+                       5 "Same agreement as time spent with child(ren)" 
+                       7 "Not asked" 8 "Not stated" 9 "Don't know" ;
+label define csp_q160_c01 1 "Yes" 2 "No" 7 "Not asked" 8 "Not stated" 
+                       9 "Don't know" ;
+label define csp_q160_c02 1 "Yes" 2 "No" 7 "Not asked" 8 "Not stated" 
+                       9 "Don't know" ;
+label define csp_q160_c03 1 "Yes" 2 "No" 7 "Not asked" 8 "Not stated" 
+                       9 "Don't know" ;
+label define csp_q160_c04 1 "Yes" 2 "No" 7 "Not asked" 8 "Not stated" 
+                       9 "Don't know" ;
+label define csp_q160_c05 1 "Yes" 2 "No" 7 "Not asked" 8 "Not stated" 
+                       9 "Don't know" ;
+label define csp_q170  1 "Yes" 2 "No" 7 "Not asked" 8 "Not stated" 
+                       9 "Don't know" ;
+label define fsp_q130c 1 "Weekly" 2 "Bi-weekly" 3 "Monthly" 
+                       4 "In one lump sum payment" 5 "Irregularly" 
+                       6 "As needed" 7 "Other" 97 "Not asked" 98 "Not stated" 
+                       99 "Don't know" ;
+label define fsp_q135grp 1 "Less than $3,000" 2 "$3,000 to $4,999" 
+                       3 "$5,000 to $9,999" 4 "$10,000 and over" 
+                       7 "Not asked" 8 "Not stated" 9 "Don't know" ;
+label define fsp_q320c 1 "... the full amount?" 
+                       2 "... three-quarters or more (75 - 99%)?" 
+                       3 "... one-half to up to three-quarters (50 - 74%)?" 
+                       4 "... one-quarter to up to one-half (25 - 49%)?" 
+                       5 "... up to one-quarter (1 - 24%)?" 6 "... nothing?" 
+                       7 "Not asked" 8 "Not stated" 9 "Don't know" ;
+label define fsr_q130  1 "Weekly" 2 "Bi-weekly" 3 "Monthly" 
+                       4 "In one lump sum payment" 5 "Irregularly" 
+                       6 "As needed" 7 "Other" 97 "Not asked" 98 "Not stated" 
+                       99 "Don't know" ;
+label define fsr_q135grp 1 "Less than $3000" 2 "$3000 to $4999" 
+                       3 "$5000 to $9999" 4 "$10000 and over" 7 "Not asked" 
+                       8 "Not stated" 9 "Don't know" ;
+label define fsr_q310c 
+                       1 "... never missed a payment (made all payments on time and in full)?" 
+                       2 "... made all payments but some or all were late?" 
+                       3 "... missed a few payments that were due (a few payments were either missed altogether or not in full)?" 
+                       4 "... missed most payments that were due?" 
+                       5 "... missed all payments?" 7 "Not asked" 
+                       8 "Not stated" 9 "Don't know" ;
+label define fsr_q320c 1 "... the full amount?" 
+                       2 "... three-quarters or more (75 - 99%)?" 
+                       3 "... one-half to up to three-quarters (50 -74%)?" 
+                       4 "... one-quarter to up to one-half (25 - 49%)?" 
+                       5 "... up to one-quarter (1 - 24%)?" 6 "... nothing?" 
+                       7 "Not asked" 8 "Not stated" 9 "Don't know" ;
+label define acmyrc    1 "Working at a paid job or business" 
+                       2 "Looking for paid work" 3 "Going to school" 
+                       4 "Caring for children" 5 "Household work" 6 "Retired" 
+                       7 "Maternity / paternity leave" 8 "Long term illness" 
+                       9 "Other" 10 "(Invalid Data - No Label)" 
+                       98 "Not stated" 99 "Don't know" ;
+label define edustat   1 "Studying full-time" 2 "Studying part-time" 
+                       7 "Not asked" 8 "Not stated" 9 "Don't know" ;
+label define mar_q133  1 "Yes" 2 "No" 8 "Not stated" 9 "Don't know" ;
+label define mar_q134  1 "Yes" 2 "No" 7 "Not asked" 8 "Not stated" 
+                       9 "Don't know" ;
+label define mar_q135  1 "Yes" 2 "No" 7 "Not asked" 8 "Not stated" 
+                       9 "Don't know" ;
+label define mar_q136  1 "Yes" 2 "No" 7 "Not asked" 8 "Not stated" 
+                       9 "Don't know" ;
+label define wkwe      97 "Not asked" 98 "Not stated" 99 "Don't know" ;
+label define wet_q120  1 "... a paid worker" 2 "... self-employed" 
+                       3 "... an unpaid family worker" 7 "Not asked" 
+                       8 "Not stated" 9 "Don't know" ;
+label define wti_q110  1 "Yes" 2 "No" 3 "Not applicable" 7 "Not asked" 
+                       8 "Not stated" 9 "Don't know" ;
+label define wti_q130  1 "Care for children" 
+                       2 "Care for other family members" 
+                       3 "Other personal or family responsibilities" 
+                       4 "Requirements of the job, no choice" 
+                       5 "Home is usual place of work" 
+                       6 "Better conditions of work" 7 "Save time, money" 
+                       8 "Live too far from work to commute" 9 "Other" 
+                       97 "Not asked" 98 "Not stated" 99 "Don't know" ;
+label define naics2007_c16c 1 "Agriculture" 
+                       2 "Forestry, fishing, mining, oil and gas" 
+                       3 "Utilities" 4 "Construction" 5 "Manufacturing" 
+                       6 "Trade" 7 "Transportation and warehousing" 
+                       8 "Finance, insurance, real estate and leasing" 
+                       9 "Professional, scientific and technical services" 
+                       10 "Management, administrative and other support" 
+                       11 "Educational services" 
+                       12 "Health care and social assistance" 
+                       13 "Information, culture and recreation" 
+                       14 "Accommodation and food services" 
+                       15 "Other services" 16 "Public administration" 
+                       97 "Not asked" 98 "Not stated" 99 "Don't know" ;
+label define nocs2006_c10c 1 "Management occupations" 
+                       2 "Business, finance and administrative occupations" 
+                       3 "Natural and applied sciences and related occupations" 
+                       4 "Health occupations" 
+                       5 "Occupations in social science, education, government service and religion" 
+                       6 "Occupations in art, culture, recreation and sport" 
+                       7 "Sales and services occupations" 
+                       8 "Trades, transport and equipment operators and related occupations" 
+                       9 "Occupations unique to primary industry" 
+                       10 "Occupations unique to processing, manufacturing and utilities" 
+                       97 "Not asked" 98 "Not stated" 99 "Don't know" ;
+label define wly_q145  1 "Yes" 2 "No" 7 "Not asked" 8 "Not stated" 
+                       9 "Don't know" ;
+label define wly_q150  
+                       1 "...regular employee (no contractual or anticipated termination date)" 
+                       2 "...seasonal employee (employment on this job is intermittent according to the seasons of the year)?" 
+                       3 "...term employee (term of employment has a set termination date)" 
+                       4 "...casual or on-call employee" 7 "Not asked" 
+                       8 "Not stated" 9 "Don't know" ;
+label define wly_q160  1 "Yes" 2 "No" 7 "Not asked" 8 "Not stated" 
+                       9 "Don't know" ;
+label define whw_q110  1 "Yes" 2 "No" 7 "Not asked" 8 "Not stated" 
+                       9 "Don't know" ;
+label define wkwehr_c  75.0 "75 and more hours" 99.7 "Not asked" 
+                       99.8 "Not stated" 99.9 "Don't know" ;
+label define whw_q160_c01 1 "Yes" 2 "No" 7 "Not asked" 8 "Not stated" 
+                       9 "Don't know" ;
+label define whw_q160_c02 1 "Yes" 2 "No" 7 "Not asked" 8 "Not stated" 
+                       9 "Don't know" ;
+label define whw_q160_c03 1 "Yes" 2 "No" 7 "Not asked" 8 "Not stated" 
+                       9 "Don't know" ;
+label define whw_q160_c04 1 "Yes" 2 "No" 7 "Not asked" 8 "Not stated" 
+                       9 "Don't know" ;
+label define whw_q160_c05 1 "Yes" 2 "No" 7 "Not asked" 8 "Not stated" 
+                       9 "Don't know" ;
+label define whw_q160_c06 1 "Yes" 2 "No" 7 "Not asked" 8 "Not stated" 
+                       9 "Don't know" ;
+label define whw_q160_c07 1 "Yes" 2 "No" 7 "Not asked" 8 "Not stated" 
+                       9 "Don't know" ;
+label define whw_q160_c08 1 "Yes" 2 "No" 7 "Not asked" 8 "Not stated" 
+                       9 "Don't know" ;
+label define whw_q160_c09 1 "Yes" 2 "No" 7 "Not asked" 8 "Not stated" 
+                       9 "Don't know" ;
+label define whw_q160_c10 1 "Yes" 2 "No" 7 "Not asked" 8 "Not stated" 
+                       9 "Don't know" ;
+label define whw_q210  97 "Not asked" 98 "Not stated" 99 "Don't know" ;
+label define whw_q230  1 "... a regular daytime schedule or shift?" 
+                       2 "... a regular evening shift?" 
+                       3 "... a regular night shift?" 
+                       4 "... a rotating shift (one that changes periodically from days to evenings or to nights)?" 
+                       5 "... a split shift (one consisting of two or more distinct periods each day)?" 
+                       6 "... a compressed work week?" 
+                       7 "... on call or casual?" 
+                       8 "... an irregular schedule?" 9 "Other" 
+                       97 "Not asked" 98 "Not stated" 99 "Don't know" ;
+label define wfr_q510  1 "Very satisfied" 2 "Satisfied" 
+                       3 "Neither satisfied nor dissatisfied" 
+                       4 "Dissatisfied" 5 "Very dissatisfied" 7 "Not asked" 
+                       8 "Not stated" 9 "Don't know" ;
+label define wfr_q520_c01 1 "Yes" 2 "No" 7 "Not asked" 8 "Not stated" 
+                       9 "Don't know" ;
+label define wfr_q520_c02 1 "Yes" 2 "No" 7 "Not asked" 8 "Not stated" 
+                       9 "Don't know" ;
+label define wfr_q520_c03 1 "Yes" 2 "No" 7 "Not asked" 8 "Not stated" 
+                       9 "Don't know" ;
+label define wfr_q520_c04 1 "Yes" 2 "No" 7 "Not asked" 8 "Not stated" 
+                       9 "Don't know" ;
+label define wfr_q520_c05 1 "Yes" 2 "No" 7 "Not asked" 8 "Not stated" 
+                       9 "Don't know" ;
+label define wfr_q520_c06 1 "Yes" 2 "No" 7 "Not asked" 8 "Not stated" 
+                       9 "Don't know" ;
+label define wfr_q520_c07 1 "Yes" 2 "No" 7 "Not asked" 8 "Not stated" 
+                       9 "Don't know" ;
+label define wfr_q520_c08 1 "Yes" 2 "No" 7 "Not asked" 8 "Not stated" 
+                       9 "Don't know" ;
+label define eduyr     0 "No schooling" 1 "One to five years" 6 "Six" 
+                       7 "Seven" 8 "Eight" 9 "Nine" 10 "Ten" 11 "Eleven" 
+                       12 "Twelve" 13 "Thirteen" 98 "Not stated" 
+                       99 "Don't know" ;
+label define eor_q110  1 "Yes" 2 "No" 7 "Not asked" 8 "Not stated" 
+                       9 "Don't know" ;
+label define eor_q150  1 "Yes" 2 "No" 7 "Not asked" 8 "Not stated" 
+                       9 "Don't know" ;
+label define edu5      1 "Doctorate/masters/bachelor's degree" 
+                       2 "Diploma/certificate from community college or trade/technical" 
+                       3 "Some university/community college" 
+                       4 "High school diploma" 
+                       5 "Some secondary/elementary/no schooling" 
+                       8 "Not stated" 9 "Don't know" ;
+label define edu10c    
+                       1 "Doctorate/masters/degree in Medicine/ Dentistry/ Veterinary/ Optometry" 
+                       2 "Bachelor or undergraduate degree, or teacher's college" 
+                       3 "Diploma or certificate from community college/cegep/nursing school" 
+                       4 "Diploma or certificate from trade, technical / vocational school/ business college" 
+                       5 "Some university" 
+                       6 "Some community college/cegep/nursing" 
+                       7 "Some trade/technical /vocational school/ business college" 
+                       8 "High school diploma" 9 "Some secondary/high school" 
+                       10 "Elementary school/no schooling" 98 "Not stated" 
+                       99 "Don't know" ;
+label define age_compl_studies_c 65.0 "65 and more" 
+                       99.5 "Respondent never lived with child" 
+                       99.7 "Not asked" 99.8 "Not stated" 99.9 "Don't know" ;
+label define f_eor_q210 1 "Canada" 2 "Outside of Canada" 7 "Not asked" 
+                       8 "Not stated" 9 "Don't know" ;
+label define acmpryrc  1 "Working at a paid job or business" 
+                       2 "Looking for paid work" 3 "Going to school" 
+                       4 "Caring for children" 5 "Household work" 6 "Retired" 
+                       7 "Maternity/paternity/parental leave" 
+                       8 "Long term illness" 
+                       9 "Volunteering or care-giving other than for children" 
+                       10 "Other" 97 "Not Asked" 98 "Not stated" 
+                       99 "Don't know" ;
+label define map_q120  1 "Full-time" 2 "Part-time" 7 "Not asked" 
+                       8 "Not stated" 9 "Don't know" ;
+label define map_q130  1 "Yes" 2 "No" 7 "Not asked" 8 "Not stated" 
+                       9 "Don't know" ;
+label define map_q131  97 "Not Asked" 98 "Not stated" 99 "Don't know" ;
+label define map_q132  1 "... a paid worker?" 2 "... self-employed?" 
+                       3 "... an unpaid family worker?" 7 "Not asked" 
+                       8 "Not stated" 9 "Don't know" ;
+label define map_q135c 75.0 "75 or more" 999.7 "Not asked" 999.8 "Not stated" 
+                       999.9 "Don't know" ;
+label define map_q140c 1 "Own illness or disability (spouse's / partner's)" 
+                       2 "Child care responsibilities" 
+                       3 "Elder care responsibilities" 
+                       4 "Other personal or family responsibilities" 
+                       5 "Going to school" 6 "Could only find part-time work" 
+                       7 "Did not want full-time work" 
+                       8 "Requirement of the work" 9 "Other" 97 "Not asked" 
+                       98 "Not stated" 99 "Don't know" ;
+label define map_q145  1 "Full-time" 2 "Part-time" 7 "Not asked" 
+                       8 "Not stated" 9 "Don't know" ;
+label define map_q150  1 "Yes" 2 "No" 7 "Not asked" 8 "Not stated" 
+                       9 "Don't know" ;
+label define map_q152  1 "Meet regular household expenses" 2 "Pay off debts" 
+                       3 "Buy something special" 4 "Save for the future" 
+                       5 "Gain experience" 6 "Build up a business" 
+                       7 "Enjoys the work of the second job" 8 "Other" 
+                       97 "Not asked" 98 "Not stated" 99 "Don't know" ;
+label define map_q155  1 "... a regular daytime schedule or shift?" 
+                       2 "... a regular evening shift?" 
+                       3 "... a regular night shift?" 
+                       4 "... a rotating shift? (one that changes periodically from days to evenings or to nights)" 
+                       5 "... a split shift? (one consisting of two or more distinct periods each day)" 
+                       6 "... a compressed work week?" 
+                       7 "... on call or casual?" 
+                       8 "... an irregular schedule?" 9 "Other" 
+                       97 "Not asked" 98 "Not stated" 99 "Don't know" ;
+label define map_q190  1 "Yes" 2 "No" 7 "Not asked" 8 "Not stated" 
+                       9 "Don't know" ;
+label define edupr5    1 "Doctorate/masters/bachelor's degree" 
+                       2 "Diploma/certificate from community college or trade/technical" 
+                       3 "Some university/community college" 
+                       4 "High school diploma" 
+                       5 "Some secondary/elementary/no schooling" 
+                       7 "Not asked" 8 "Not stated" 9 "Don't know" ;
+label define edupr10c  
+                       1 "Doctorate/masters/degree in Medicine/ Dentistry/ Veterinary/ Optometry" 
+                       2 "Bachelor or undergraduate degree/ teacher's college" 
+                       3 "Diploma or certificate from community college/cegep/ nursing school" 
+                       4 "Diploma or certificate from trade, technical / vocational school / business college" 
+                       5 "Some university" 
+                       6 "Some community college/cegep/nursing" 
+                       7 "Some trade, technical /vocational school/ business college" 
+                       8 "High school diploma" 9 "Some high school" 
+                       10 "Elementary school/no schooling" 97 "Not asked" 
+                       98 "Not stated" 99 "Don't know" ;
+label define whi_q10   1 "Yes" 2 "No" 8 "Not stated" 9 "Don't know" ;
+label define age_wk1begc 15.0 "15 or less" 60.0 "60 or more" 99.7 "Not asked" 
+                       99.8 "Not stated" 99.9 "Don't know" ;
+label define age_wk1endc 15.0 "15 or less" 65.0 "65 or more" 
+                       99.5 "Still a seasonal worker/self-employed" 
+                       99.6 "Still working" 99.7 "Not asked" 
+                       99.8 "Not stated" 99.9 "Don't know" ;
+label define dur_wk1c  995 "Still a seasonal worker" 996 "Still working" 
+                       997 "Not asked" 998 "Not stated" 999 "Don't know" ;
+label define wh1_q120  1 "Yes" 2 "No" 7 "Not asked" 8 "Not stated" 
+                       9 "Don't know" ;
+label define wh1_q210  1 "... a paid worker?" 2 "... self-employed?" 
+                       3 "... an unpaid family worker?" 7 "Not asked" 
+                       8 "Not stated" 9 "Don't know" ;
+label define wh1_q230  1 "Yes" 2 "No" 7 "Not asked" 8 "Not stated" 
+                       9 "Don't know" ;
+label define wh1_q240  1 "Yes" 2 "No" 7 "Not asked" 8 "Not stated" 
+                       9 "Don't know" ;
+label define wh1_q255  1 "Absence (of 3 months or more)" 
+                       2 "Reduction of work hours (less than 30 hours per week)" 
+                       7 "Not asked" 8 "Not stated" 9 "Don't know" ;
+label define wh1_q310  1 "... a paid worker?" 2 "... self-employed?" 
+                       3 "... an unpaid family worker?" 7 "Not asked" 
+                       8 "Not stated" 9 "Don't know" ;
+label define wh1_q320  1 "Own illness, disability or accident" 
+                       2 "Personal/family reasons" 3 "Going to school" 
+                       4 "Requirement of the work" 
+                       5 "Did not want to work more than 30 hours per week" 
+                       6 "Could only find part-time work" 7 "Other" 
+                       97 "Not asked" 98 "Not stated" 99 "Don't know" ;
+label define wh1_q330  1 "Yes" 2 "No" 7 "Not asked" 8 "Not stated" 
+                       9 "Don't know" ;
+label define wh1_q340  1 "Yes" 2 "No" 7 "Not asked" 8 "Not stated" 
+                       9 "Don't know" ;
+label define wh1_q355  1 "Absence (of 3 months or more)" 
+                       2 "Increase of work hours (30 hours or more per week)" 
+                       7 "Not asked" 8 "Not stated" 9 "Don't know" ;
+label define wh1_q370_c01 1 "Yes" 2 "No" 7 "Not asked" 8 "Not stated" 
+                       9 "Don't know" ;
+label define wh1_q370_c02 1 "Yes" 2 "No" 7 "Not asked" 8 "Not stated" 
+                       9 "Don't know" ;
+label define wh1_q370_c03 1 "Yes" 2 "No" 7 "Not asked" 8 "Not stated" 
+                       9 "Don't know" ;
+label define wh1_q370_c04 1 "Yes" 2 "No" 7 "Not asked" 8 "Not stated" 
+                       9 "Don't know" ;
+label define wh1_q370_c05 1 "Yes" 2 "No" 7 "Not asked" 8 "Not stated" 
+                       9 "Don't know" ;
+label define wh1_q370_c06 1 "Yes" 2 "No" 7 "Not asked" 8 "Not stated" 
+                       9 "Don't know" ;
+label define wh1_q370_c07 1 "Yes" 2 "No" 7 "Not asked" 8 "Not stated" 
+                       9 "Don't know" ;
+label define wh1_q370_c08 1 "Yes" 2 "No" 7 "Not asked" 8 "Not stated" 
+                       9 "Don't know" ;
+label define wh1_q370_c09 1 "Yes" 2 "No" 7 "Not asked" 8 "Not stated" 
+                       9 "Don't know" ;
+label define wh1_q370_c10 1 "Yes" 2 "No" 7 "Not asked" 8 "Not stated" 
+                       9 "Don't know" ;
+label define wh1_q370_c11 1 "Yes" 2 "No" 7 "Not asked" 8 "Not stated" 
+                       9 "Don't know" ;
+label define wh1_q370_c12 1 "Yes" 2 "No" 7 "Not asked" 8 "Not stated" 
+                       9 "Don't know" ;
+label define wh1_q370_c13 1 "Yes" 2 "No" 7 "Not asked" 8 "Not stated" 
+                       9 "Don't know" ;
+label define wh1_q370_c14 1 "Yes" 2 "No" 7 "Not asked" 8 "Not stated" 
+                       9 "Don't know" ;
+label define wh1_q370_c15 1 "Yes" 2 "No" 7 "Not asked" 8 "Not stated" 
+                       9 "Don't know" ;
+label define wh1_q370_c16 1 "Yes" 2 "No" 7 "Not asked" 8 "Not stated" 
+                       9 "Don't know" ;
+label define wh1_q370_c17 1 "Yes" 2 "No" 7 "Not asked" 8 "Not stated" 
+                       9 "Don't know" ;
+label define wh1_q410  1 "Yes" 2 "No" 7 "Not asked" 8 "Not stated" 
+                       9 "Don't know" ;
+label define wh1_q420  1 "Yes" 2 "No" 7 "Not asked" 8 "Not stated" 
+                       9 "Don't know" ;
+label define wh1_q470  1 "Yes" 2 "No" 7 "Not asked" 8 "Not stated" 
+                       9 "Don't know" ;
+label define wh2_q100  1 "Yes" 2 "No" 7 "Not asked" 8 "Not stated" 
+                       9 "Don't know" ;
+label define age_wk2begc 15.0 "15 or less" 60.0 "60 or more" 99.7 "Not asked" 
+                       99.8 "Not stated" 99.9 "Don't know" ;
+label define age_wk2endc 15.0 "15 or less" 65.0 "65 or more" 
+                       99.5 "Still a seasonal worker/self-employed" 
+                       99.6 "Still working" 99.7 "Not asked" 
+                       99.8 "Not stated" 99.9 "Don't know" ;
+label define dur_wk2c  995 "Still a seasonal worker" 996 "Still working" 
+                       997 "Not asked" 998 "Not stated" 999 "Don't know" ;
+label define wh2_q115  1 "Yes" 2 "No" 7 "Not asked" 8 "Not stated" 
+                       9 "Don't know" ;
+label define wh2_q120  1 "Yes" 2 "No" 7 "Not asked" 8 "Not stated" 
+                       9 "Don't know" ;
+label define wh2_q210  1 "... a paid worker?" 2 "... self-employed?" 
+                       3 "... an unpaid family worker?" 7 "Not asked" 
+                       8 "Not stated" 9 "Don't know" ;
+label define wh2_q230  1 "Yes" 2 "No" 7 "Not asked" 8 "Not stated" 
+                       9 "Don't know" ;
+label define wh2_q240  1 "Yes" 2 "No" 7 "Not asked" 8 "Not stated" 
+                       9 "Don't know" ;
+label define wh2_q255  1 "Absence (of 3 months or more)" 
+                       2 "Reduction of work hours (less than 30 hours per week)" 
+                       7 "Not asked" 8 "Not stated" 9 "Don't know" ;
+label define wh2_q310  1 "... a paid worker?" 2 "... self-employed?" 
+                       3 "... an unpaid family worker?" 7 "Not asked" 
+                       8 "Not stated" 9 "Don't know" ;
+label define wh2_q320  1 "Own illness, disability or accident" 
+                       2 "Personal/family reasons" 3 "Going to school" 
+                       4 "Requirement of the work" 
+                       5 "Did not want to work more than 30 hours per week" 
+                       6 "Could only find part-time work" 7 "Other" 
+                       97 "Not asked" 98 "Not stated" 99 "Don't know" ;
+label define wh2_q330  1 "Yes" 2 "No" 7 "Not asked" 8 "Not stated" 
+                       9 "Don't know" ;
+label define wh2_q340  1 "Yes" 2 "No" 7 "Not asked" 8 "Not stated" 
+                       9 "Don't know" ;
+label define wh2_q355  1 "Absence (of 3 months or more)" 
+                       2 "Increase of work hours (30 hours or more per week)" 
+                       7 "Not asked" 8 "Not stated" 9 "Don't know" ;
+label define wh2_q370_c01 1 "Yes" 2 "No" 7 "Not asked" 8 "Not stated" 
+                       9 "Don't know" ;
+label define wh2_q370_c02 1 "Yes" 2 "No" 7 "Not asked" 8 "Not stated" 
+                       9 "Don't know" ;
+label define wh2_q370_c03 1 "Yes" 2 "No" 7 "Not asked" 8 "Not stated" 
+                       9 "Don't know" ;
+label define wh2_q370_c04 1 "Yes" 2 "No" 7 "Not asked" 8 "Not stated" 
+                       9 "Don't know" ;
+label define wh2_q370_c05 1 "Yes" 2 "No" 7 "Not asked" 8 "Not stated" 
+                       9 "Don't know" ;
+label define wh2_q370_c06 1 "Yes" 2 "No" 7 "Not asked" 8 "Not stated" 
+                       9 "Don't know" ;
+label define wh2_q370_c07 1 "Yes" 2 "No" 7 "Not asked" 8 "Not stated" 
+                       9 "Don't know" ;
+label define wh2_q370_c08 1 "Yes" 2 "No" 7 "Not asked" 8 "Not stated" 
+                       9 "Don't know" ;
+label define wh2_q370_c09 1 "Yes" 2 "No" 7 "Not asked" 8 "Not stated" 
+                       9 "Don't know" ;
+label define wh2_q370_c10 1 "Yes" 2 "No" 7 "Not asked" 8 "Not stated" 
+                       9 "Don't know" ;
+label define wh2_q370_c11 1 "Yes" 2 "No" 7 "Not asked" 8 "Not stated" 
+                       9 "Don't know" ;
+label define wh2_q370_c12 1 "Yes" 2 "No" 7 "Not asked" 8 "Not stated" 
+                       9 "Don't know" ;
+label define wh2_q370_c13 1 "Yes" 2 "No" 7 "Not asked" 8 "Not stated" 
+                       9 "Don't know" ;
+label define wh2_q370_c14 1 "Yes" 2 "No" 7 "Not asked" 8 "Not stated" 
+                       9 "Don't know" ;
+label define wh2_q370_c15 1 "Yes" 2 "No" 7 "Not asked" 8 "Not stated" 
+                       9 "Don't know" ;
+label define wh2_q370_c16 1 "Yes" 2 "No" 7 "Not asked" 8 "Not stated" 
+                       9 "Don't know" ;
+label define wh2_q370_c17 1 "Yes" 2 "No" 7 "Not asked" 8 "Not stated" 
+                       9 "Don't know" ;
+label define wh2_q410  1 "Yes" 2 "No" 7 "Not asked" 8 "Not stated" 
+                       9 "Don't know" ;
+label define wh2_q420  1 "Yes" 2 "No" 7 "Not asked" 8 "Not stated" 
+                       9 "Don't know" ;
+label define wh2_q470  1 "Yes" 2 "No" 7 "Not asked" 8 "Not stated" 
+                       9 "Don't know" ;
+label define wh3_q100  1 "Yes" 2 "No" 7 "Not asked" 8 "Not stated" 
+                       9 "Don't know" ;
+label define age_wk3begc 15.0 "15 or less" 60.0 "60 or more" 99.7 "Not asked" 
+                       99.8 "Not stated" 99.9 "Don't know" ;
+label define age_wk3endc 15.0 "15 or less" 65.0 "65 or more" 
+                       99.5 "Still a seasonal worker/self-employed" 
+                       99.6 "Still working" 99.7 "Not asked" 
+                       99.8 "Not stated" 99.9 "Don't know" ;
+label define dur_wk3c  995 "Still a seasonal worker" 996 "Still working" 
+                       997 "Not asked" 998 "Not stated" 999 "Don't know" ;
+label define wh3_q115  1 "Yes" 2 "No" 7 "Not asked" 8 "Not stated" 
+                       9 "Don't know" ;
+label define wh3_q120  1 "Yes" 2 "No" 7 "Not asked" 8 "Not stated" 
+                       9 "Don't know" ;
+label define wh3_q210  1 "... a paid worker?" 2 "... self-employed?" 
+                       3 "... an unpaid family worker?" 7 "Not asked" 
+                       8 "Not stated" 9 "Don't know" ;
+label define wh3_q230  1 "Yes" 2 "No" 7 "Not asked" 8 "Not stated" 
+                       9 "Don't know" ;
+label define wh3_q240  1 "Yes" 2 "No" 7 "Not asked" 8 "Not stated" 
+                       9 "Don't know" ;
+label define wh3_q255  1 "Absence (of 3 months or more)" 
+                       2 "Reduction of work hours (less than 30 hours per week)" 
+                       7 "Not asked" 8 "Not stated" 9 "Don't know" ;
+label define wh3_q310  1 "... a paid worker?" 2 "... self-employed?" 
+                       3 "... an unpaid family worker?" 7 "Not asked" 
+                       8 "Not stated" 9 "Don't know" ;
+label define wh3_q320  1 "Own illness, disability or accident" 
+                       2 "Personal/family reasons" 3 "Going to school" 
+                       4 "Requirement of the work" 
+                       5 "Did not want to work more than 30 hours per week" 
+                       6 "Could only find part-time work" 7 "Other" 
+                       97 "Not asked" 98 "Not stated" 99 "Don't know" ;
+label define wh3_q330  1 "Yes" 2 "No" 7 "Not asked" 8 "Not stated" 
+                       9 "Don't know" ;
+label define wh3_q340  1 "Yes" 2 "No" 7 "Not asked" 8 "Not stated" 
+                       9 "Don't know" ;
+label define wh3_q355  1 "Absence (of 3 months or more)" 
+                       2 "Increase of work hours (30 hours or more per week)" 
+                       7 "Not asked" 8 "Not stated" 9 "Don't know" ;
+label define wh3_q370_c01 1 "Yes" 2 "No" 7 "Not asked" 8 "Not stated" 
+                       9 "Don't know" ;
+label define wh3_q370_c02 1 "Yes" 2 "No" 7 "Not asked" 8 "Not stated" 
+                       9 "Don't know" ;
+label define wh3_q370_c03 1 "Yes" 2 "No" 7 "Not asked" 8 "Not stated" 
+                       9 "Don't know" ;
+label define wh3_q370_c04 1 "Yes" 2 "No" 7 "Not asked" 8 "Not stated" 
+                       9 "Don't know" ;
+label define wh3_q370_c05 1 "Yes" 2 "No" 7 "Not asked" 8 "Not stated" 
+                       9 "Don't know" ;
+label define wh3_q370_c06 1 "Yes" 2 "No" 7 "Not asked" 8 "Not stated" 
+                       9 "Don't know" ;
+label define wh3_q370_c07 1 "Yes" 2 "No" 7 "Not asked" 8 "Not stated" 
+                       9 "Don't know" ;
+label define wh3_q370_c08 1 "Yes" 2 "No" 7 "Not asked" 8 "Not stated" 
+                       9 "Don't know" ;
+label define wh3_q370_c09 1 "Yes" 2 "No" 7 "Not asked" 8 "Not stated" 
+                       9 "Don't know" ;
+label define wh3_q370_c10 1 "Yes" 2 "No" 7 "Not asked" 8 "Not stated" 
+                       9 "Don't know" ;
+label define wh3_q370_c11 1 "Yes" 2 "No" 7 "Not asked" 8 "Not stated" 
+                       9 "Don't know" ;
+label define wh3_q370_c12 1 "Yes" 2 "No" 7 "Not asked" 8 "Not stated" 
+                       9 "Don't know" ;
+label define wh3_q370_c13 1 "Yes" 2 "No" 7 "Not asked" 8 "Not stated" 
+                       9 "Don't know" ;
+label define wh3_q370_c14 1 "Yes" 2 "No" 7 "Not asked" 8 "Not stated" 
+                       9 "Don't know" ;
+label define wh3_q370_c15 1 "Yes" 2 "No" 7 "Not asked" 8 "Not stated" 
+                       9 "Don't know" ;
+label define wh3_q370_c16 1 "Yes" 2 "No" 7 "Not asked" 8 "Not stated" 
+                       9 "Don't know" ;
+label define wh3_q370_c17 1 "Yes" 2 "No" 7 "Not asked" 8 "Not stated" 
+                       9 "Don't know" ;
+label define wh3_q410  1 "Yes" 2 "No" 7 "Not asked" 8 "Not stated" 
+                       9 "Don't know" ;
+label define wh3_q420  1 "Yes" 2 "No" 7 "Not asked" 8 "Not stated" 
+                       9 "Don't know" ;
+label define wh3_q470  1 "Yes" 2 "No" 7 "Not asked" 8 "Not stated" 
+                       9 "Don't know" ;
+label define wh4_q100  1 "Yes" 2 "No" 7 "Not asked" 8 "Not stated" 
+                       9 "Don't know" ;
+label define age_wk4begc 60.0 "60 or more" 99.7 "Not asked" 99.8 "Not stated" 
+                       99.9 "Don't know" ;
+label define age_wk4endc 65.0 "65 or more" 99.5 "Still a seasonal worker" 
+                       99.6 "Still working" 99.7 "Not asked" 
+                       99.8 "Not stated" 99.9 "Don't know" ;
+label define dur_wk4c  995 "Still a seasonal worker" 996 "Still working" 
+                       997 "Not asked" 998 "Not stated" 999 "Don't know" ;
+label define wh4_q115  1 "Yes" 2 "No" 7 "Not asked" 8 "Not stated" 
+                       9 "Don't know" ;
+label define wh4_q120  1 "Yes" 2 "No" 7 "Not asked" 8 "Not stated" 
+                       9 "Don't know" ;
+label define wh4_q210  1 "... a paid worker?" 2 "... self-employed?" 
+                       3 "... an unpaid family worker?" 7 "Not asked" 
+                       8 "Not stated" 9 "Don't know" ;
+label define wh4_q230  1 "Yes" 2 "No" 7 "Not asked" 8 "Not stated" 
+                       9 "Don't know" ;
+label define wh4_q240  1 "Yes" 2 "No" 7 "Not asked" 8 "Not stated" 
+                       9 "Don't know" ;
+label define wh4_q255  1 "Absence (of 3 months or more)" 
+                       2 "Reduction of work hours (less than 30 hours per week)" 
+                       7 "Not asked" 8 "Not stated" 9 "Don't know" ;
+label define wh4_q310c 1 "... a paid worker?" 2 "... self-employed?" 
+                       3 "... an unpaid family worker?" 7 "Not asked" 
+                       8 "Not stated" 9 "Don't know" ;
+label define wh4_q320  1 "Own illness, disability or accident" 
+                       2 "Personal/family reasons" 3 "Going to school" 
+                       4 "Requirement of the work" 
+                       5 "Did not want to work more than 30 hours per week" 
+                       6 "Could only find part-time work" 7 "Other" 
+                       97 "Not asked" 98 "Not stated" 99 "Don't know" ;
+label define wh4_q330  1 "Yes" 2 "No" 7 "Not asked" 8 "Not stated" 
+                       9 "Don't know" ;
+label define wh4_q340  1 "Yes" 2 "No" 7 "Not asked" 8 "Not stated" 
+                       9 "Don't know" ;
+label define wh4_q355  1 "Absence (of 3 months or more)" 
+                       2 "Increase of work hours (30 hours or more per week)" 
+                       7 "Not asked" 8 "Not stated" 9 "Don't know" ;
+label define wh4_q370_c01 1 "Yes" 2 "No" 7 "Not asked" 8 "Not stated" 
+                       9 "Don't know" ;
+label define wh4_q370_c02 1 "Yes" 2 "No" 7 "Not asked" 8 "Not stated" 
+                       9 "Don't know" ;
+label define wh4_q370_c03 1 "Yes" 2 "No" 7 "Not asked" 8 "Not stated" 
+                       9 "Don't know" ;
+label define wh4_q370_c04 1 "Yes" 2 "No" 7 "Not asked" 8 "Not stated" 
+                       9 "Don't know" ;
+label define wh4_q370_c05 1 "Yes" 2 "No" 7 "Not asked" 8 "Not stated" 
+                       9 "Don't know" ;
+label define wh4_q370_c06 1 "Yes" 2 "No" 7 "Not asked" 8 "Not stated" 
+                       9 "Don't know" ;
+label define wh4_q370_c07 1 "Yes" 2 "No" 7 "Not asked" 8 "Not stated" 
+                       9 "Don't know" ;
+label define wh4_q370_c08 1 "Yes" 2 "No" 7 "Not asked" 8 "Not stated" 
+                       9 "Don't know" ;
+label define wh4_q370_c09 1 "Yes" 2 "No" 7 "Not asked" 8 "Not stated" 
+                       9 "Don't know" ;
+label define wh4_q370_c10 1 "Yes" 2 "No" 7 "Not asked" 8 "Not stated" 
+                       9 "Don't know" ;
+label define wh4_q370_c11 1 "Yes" 2 "No" 7 "Not asked" 8 "Not stated" 
+                       9 "Don't know" ;
+label define wh4_q370_c12 1 "Yes" 2 "No" 7 "Not asked" 8 "Not stated" 
+                       9 "Don't know" ;
+label define wh4_q370_c13 1 "Yes" 2 "No" 7 "Not asked" 8 "Not stated" 
+                       9 "Don't know" ;
+label define wh4_q370_c14 1 "Yes" 2 "No" 7 "Not asked" 8 "Not stated" 
+                       9 "Don't know" ;
+label define wh4_q370_c15 1 "Yes" 2 "No" 7 "Not asked" 8 "Not stated" 
+                       9 "Don't know" ;
+label define wh4_q370_c16 1 "Yes" 2 "No" 7 "Not asked" 8 "Not stated" 
+                       9 "Don't know" ;
+label define wh4_q370_c17 1 "Yes" 2 "No" 7 "Not asked" 8 "Not stated" 
+                       9 "Don't know" ;
+label define wh4_q410  1 "Yes" 2 "No" 7 "Not asked" 8 "Not stated" 
+                       9 "Don't know" ;
+label define wh4_q420  1 "Yes" 2 "No" 7 "Not asked" 8 "Not stated" 
+                       9 "Don't know" ;
+label define wh5_q100  1 "Yes" 2 "No" 7 "Not asked" 8 "Not stated" 
+                       9 "Don't know" ;
+label define age_wk5begc 60.0 "60 or more" 99.7 "Not asked" 99.8 "Not stated" 
+                       99.9 "Don't know" ;
+label define age_wk5endc 65.0 "65 or more" 99.5 "Still a seasonal worker" 
+                       99.6 "Still working" 99.7 "Not asked" 
+                       99.8 "Not stated" 99.9 "Don't know" ;
+label define dur_wk5c  995 "Still a seasonal worker" 996 "Still working" 
+                       997 "Not asked" 998 "Not stated" 999 "Don't know" ;
+label define wh5_q115  1 "Yes" 2 "No" 7 "Not asked" 8 "Not stated" 
+                       9 "Don't know" ;
+label define wh5_q120  1 "Yes" 2 "No" 7 "Not asked" 8 "Not stated" 
+                       9 "Don't know" ;
+label define wh5_q210c 1 "... a paid worker?" 2 "... self-employed?" 
+                       3 "... an unpaid family worker?" 7 "Not asked" 
+                       8 "Not stated" 9 "Don't know" ;
+label define wh5_q230  1 "Yes" 2 "No" 7 "Not asked" 8 "Not stated" 
+                       9 "Don't know" ;
+label define wh5_q240  1 "Yes" 2 "No" 7 "Not asked" 8 "Not stated" 
+                       9 "Don't know" ;
+label define wh5_q255  1 "Absence (of 3 months or more)" 
+                       2 "Reduction of work hours (less than 30 hours per week)" 
+                       7 "Not asked" 8 "Not stated" 9 "Don't know" ;
+label define wh5_q310c 1 "... a paid worker?" 2 "... self-employed?" 
+                       3 "... an unpaid family worker?" 7 "Not asked" 
+                       8 "Not stated" 9 "Don't know" ;
+label define wh5_q320  1 "Own illness, disability or accident" 
+                       2 "Personal/family reasons" 3 "Going to school" 
+                       4 "Requirement of the work" 
+                       5 "Did not want to work more than 30 hours per week" 
+                       6 "Could only find part-time work" 7 "Other" 
+                       97 "Not asked" 98 "Not stated" 99 "Don't know" ;
+label define wh5_q330  1 "Yes" 2 "No" 7 "Not asked" 8 "Not stated" 
+                       9 "Don't know" ;
+label define wh5_q340  1 "Yes" 2 "No" 7 "Not asked" 8 "Not stated" 
+                       9 "Don't know" ;
+label define wh5_q355  1 "Absence (of 3 months or more)" 
+                       2 "Increase of work hours (30 hours or more per week)" 
+                       7 "Not asked" 8 "Not stated" 9 "Don't know" ;
+label define wh5_q370_c01 1 "Yes" 2 "No" 7 "Not asked" 8 "Not stated" 
+                       9 "Don't know" ;
+label define wh5_q370_c02 1 "Yes" 2 "No" 7 "Not asked" 8 "Not stated" 
+                       9 "Don't know" ;
+label define wh5_q370_c03 1 "Yes" 2 "No" 7 "Not asked" 8 "Not stated" 
+                       9 "Don't know" ;
+label define wh5_q370_c04 1 "Yes" 2 "No" 7 "Not asked" 8 "Not stated" 
+                       9 "Don't know" ;
+label define wh5_q370_c05 1 "Yes" 2 "No" 7 "Not asked" 8 "Not stated" 
+                       9 "Don't know" ;
+label define wh5_q370_c06 1 "Yes" 2 "No" 7 "Not asked" 8 "Not stated" 
+                       9 "Don't know" ;
+label define wh5_q370_c07 1 "Yes" 2 "No" 7 "Not asked" 8 "Not stated" 
+                       9 "Don't know" ;
+label define wh5_q370_c08 1 "Yes" 2 "No" 7 "Not asked" 8 "Not stated" 
+                       9 "Don't know" ;
+label define wh5_q370_c09 1 "Yes" 2 "No" 7 "Not asked" 8 "Not stated" 
+                       9 "Don't know" ;
+label define wh5_q370_c10 1 "Yes" 2 "No" 7 "Not asked" 8 "Not stated" 
+                       9 "Don't know" ;
+label define wh5_q370_c11 1 "Yes" 2 "No" 7 "Not asked" 8 "Not stated" 
+                       9 "Don't know" ;
+label define wh5_q370_c12 1 "Yes" 2 "No" 7 "Not asked" 8 "Not stated" 
+                       9 "Don't know" ;
+label define wh5_q370_c13 1 "Yes" 2 "No" 7 "Not asked" 8 "Not stated" 
+                       9 "Don't know" ;
+label define wh5_q370_c14c 1 "Yes" 2 "No" 7 "Not asked" 8 "Not stated" 
+                       9 "Don't know" ;
+label define wh5_q370_c15c 1 "Yes" 2 "No" 7 "Not asked" 8 "Not stated" 
+                       9 "Don't know" ;
+label define wh5_q370_c16 1 "Yes" 2 "No" 7 "Not asked" 8 "Not stated" 
+                       9 "Don't know" ;
+label define wh5_q370_c17 1 "Yes" 2 "No" 7 "Not asked" 8 "Not stated" 
+                       9 "Don't know" ;
+label define wh5_q410  1 "Yes" 2 "No" 7 "Not asked" 8 "Not stated" 
+                       9 "Don't know" ;
+label define no_wkfull 0 "No full-time work period" 
+                       1 "One full-time work period" 
+                       2 "Two full-time work periods" 
+                       3 "Three full-time work periods" 
+                       4 "Four full-time work periods" 
+                       5 "Five full-time work periods" 8 "Not stated" 
+                       9 "Don't know" ;
+label define no_wkpart_c 0 "No part-time work period" 
+                       1 "One part-time work period" 
+                       2 "Two part-time work periods" 
+                       3 "Three part-time work periods" 
+                       4 "Four or five part-time work periods" 8 "Not stated" 
+                       9 "Don't know" ;
+label define no_wkper  0 "No work period" 1 "One work period" 
+                       2 "Two work periods" 3 "Three work periods" 
+                       4 "Four work periods" 5 "Five work periods" ;
+label define age_retired_c 18.0 "18 or less" 65.0 "65 or more" 99.7 "Not asked" 
+                       99.8 "Not stated" 99.9 "Don't know" ;
+label define wkstatus  1 "Full-time only" 2 "Part-time only" 
+                       3 "Full & Part-time" 7 "Not asked" 8 "Not stated" 
+                       9 "Don't know" ;
+label define wktype    1 "Always paid worker" 2 "Always self-employed" 
+                       3 "Always seasonal/casual worker" 
+                       4 "Always unpaid family worker" 5 "Mixed of the above" 
+                       7 "Not asked" 8 "Not stated" 9 "Don't know" ;
+label define dur_wktot 995 "Still a seasonal/casual worker" 996 "ongoing" 
+                       997 "Not asked" 998 "Not stated" 999 "Don't know" ;
+label define no_int    0 "No work absences" 1 "One work absence" 
+                       2 "Two work absences" 3 "Three work absences" 
+                       4 "Four work absences" 5 "Five work absences" 
+                       8 "Not stated" 9 "Don't know" ;
+label define age_int1begc 15.0 "15 or less" 60.0 "60 or more" 99.4 "Retired" 
+                       99.5 "Still a seasonal worker" 99.7 "Not asked" 
+                       99.8 "Not stated" 99.9 "Don't know" ;
+label define age_int1endc 15.0 "15 or less" 65.0 "65 or more" 99.4 "Retired" 
+                       99.5 "Still a seasonal worker" 
+                       99.6 "First work interruption still ongoing" 
+                       99.7 "Not asked" 99.8 "Not stated" 99.9 "Don't know" ;
+label define dur_int1c 994 "Retired" 996 "Absence ongoing" 997 "Not asked" 
+                       998 "Not stated" 999 "Don't know" ;
+label define rank_int1 1 "Between first and second work period" 
+                       2 "Between second and third work period" 
+                       3 "Between third and fourth work period" 
+                       4 "Between fourth and fifth work period" 
+                       5 "Immediately following the end of the fifth work period" 
+                       7 "Not asked" 8 "Not stated" 9 "Don't know" ;
+label define age_int2begc 15.0 "15 or less" 60.0 "60 or more" 99.4 "Retired" 
+                       99.5 "Still a seasonal worker" 99.7 "Not asked" 
+                       99.8 "Not stated" 99.9 "Don't know" ;
+label define age_int2endc 15.0 "15 or less" 65.0 "65 or more" 99.4 "Retired" 
+                       99.5 "Still a seasonal worker" 
+                       99.6 "First work interruption still ongoing" 
+                       99.7 "Not asked" 99.8 "Not stated" 99.9 "Don't know" ;
+label define dur_int2c 994 "Retired" 996 "Absence ongoing" 997 "Not asked" 
+                       998 "Not stated" 999 "Don't know" ;
+label define rank_int2 2 "Between second and third work period" 
+                       3 "Between third and fourth work period" 
+                       4 "Between fourth and fifth work period" 
+                       5 "Immediately following the end of the fifth work period" 
+                       7 "Not asked" 8 "Not stated" 9 "Don't know" ;
+label define age_int3begc 60.0 "60 and more" 99.4 "Retired" 
+                       99.5 "Still a seasonal worker" 99.7 "Not asked" 
+                       99.8 "Not stated" 99.9 "Don't know" ;
+label define age_int3endc 64.0 "64 or more" 99.4 "Retired" 
+                       99.5 "Still a seasonal worker/self-employed" 
+                       99.6 "First work interruption still ongoing" 
+                       99.7 "Not asked" 99.8 "Not stated" 99.9 "Don't know" ;
+label define dur_int3c 994 "Retired" 996 "Absence ongoing" 997 "Not asked" 
+                       998 "Not stated" 999 "Don't know" ;
+label define rank_int3 3 "Between third and fourth work period" 
+                       4 "Between fourth and fifth work period" 
+                       5 "Immediately following the end of the fifth work period" 
+                       7 "Not asked" 8 "Not stated" 9 "Don't know" ;
+label define age_int4begc 60.0 "60 and more" 99.4 "Retired" 
+                       99.5 "Still a seasonal worker" 99.7 "Not asked" 
+                       99.8 "Not stated" 99.9 "Don't know" ;
+label define age_int4endc 60.0 "60 or more" 99.4 "Retired" 
+                       99.5 "Still a seasonal worker" 
+                       99.6 "First work interruption still ongoing" 
+                       99.7 "Not asked" 99.8 "Not stated" 99.9 "Don't know" ;
+label define dur_int4c 994 "Retired" 996 "Absence ongoing" 997 "Not asked" 
+                       998 "Not stated" 999 "Don't know" ;
+label define rank_int4 4 "Between fourth and fifth work period" 
+                       5 "Immediately following the end of the fifth work period" 
+                       7 "Not asked" 8 "Not stated" 9 "Don't know" ;
+label define age_int5begc 59.0 "59 or more" 99.4 "Retired" 
+                       99.5 "Still a seasonal worker" 99.7 "Not asked" 
+                       99.8 "Not stated" 99.9 "Don't know" ;
+label define age_int5end 99.4 "Retired" 99.5 "Still a seasonal worker" 
+                       99.6 "First work interruption still ongoing" 
+                       99.7 "Not asked" 99.8 "Not stated" 99.9 "Don't know" ;
+label define dur_int5  994 "Retired" 996 "Absence ongoing" 997 "Not asked" 
+                       998 "Not stated" 999 "Don't know" ;
+label define rank_int5 
+                       5 "Immediately following the end of the fifth work period" 
+                       7 "Not asked" 8 "Not stated" 9 "Don't know" ;
+label define no_mat_patc 3 "3 and more" ;
+label define age_mat_pat1begc 16.0 "Age 16 and less" 45.0 "Age 45 and over" 
+                       99.7 "Not asked" 99.8 "Not stated" 99.9 "Don't know" ;
+label define age_mat_pat1endc 18.0 "Age 18 and less" 45.0 "Age 45 and over" 
+                       99.5 "Still on maternity/paternity leave" 
+                       99.7 "Not asked" 99.8 "Not stated" 99.9 "Don't know" ;
+label define dur_mat_pat1c 995 "Still on maternity/paternity leave" 
+                       997 "Not asked" 998 "Not stated" 999 "Don't know" ;
+label define age_mat_pat2begc 20.0 "Age 20 and less" 45.0 "Age 45 and over" 
+                       99.7 "Not asked" 99.8 "Not stated" 99.9 "Don't know" ;
+label define age_mat_pat2endc 21.0 "Age 21 and less" 45.0 "Age 45 and over" 
+                       99.5 "Still on maternity/paternity leave" 
+                       99.7 "Not asked" 99.8 "Not stated" 99.9 "Don't know" ;
+label define dur_mat_pat2c 995 "Still on maternity/paternity leave" 
+                       997 "Not asked" 998 "Not stated" 999 "Don't know" ;
+label define age_mat_pat3begc 23.0 "Age 23 and less" 43.0 "Age 43 and over" 
+                       99.7 "Not asked" 99.8 "Not stated" 99.9 "Don't know" ;
+label define age_mat_pat3endc 24.0 "Age 24 and less" 45.0 "Age 45 and over" 
+                       99.5 "Still on maternity/paternity leave" 
+                       99.7 "Not asked" 99.8 "Not stated" 99.9 "Don't know" ;
+label define dur_mat_pat3c 995 "Still on maternity/paternity leave" 
+                       997 "Not asked" 998 "Not stated" 999 "Don't know" ;
+label define lsr_q100  0 "Very dissatisfied" 1 "(Invalid Data - No Label)" 
+                       2 "(Invalid Data - No Label)" 
+                       3 "(Invalid Data - No Label)" 
+                       4 "(Invalid Data - No Label)" 
+                       5 "(Invalid Data - No Label)" 
+                       6 "(Invalid Data - No Label)" 
+                       7 "(Invalid Data - No Label)" 
+                       8 "(Invalid Data - No Label)" 
+                       9 "(Invalid Data - No Label)" 10 "Very satisfied" 
+                       98 "Not stated" 99 "Don't know" ;
+label define srh_q110  1 "... excellent?" 2 "... very good?" 3 "... good?" 
+                       4 "... fair?" 5 "... poor?" 8 "Not stated" 
+                       9 "Don't know" ;
+label define srh_q115  1 "... excellent?" 2 "... very good?" 3 "... good?" 
+                       4 "... fair?" 5 "... poor?" 8 "Not stated" 
+                       9 "Don't know" ;
+label define dwelcc    1 "Single detached house" 
+                       2 "Low-rise apartment (< 5 stories)" 
+                       3 "High-rise apartment (5 + stories)" 4 "Other" 
+                       8 "Not stated" 9 "Don't know" ;
+label define dwellown  1 "Yes" 2 "No" 8 "Not stated" 9 "Don't know" ;
+label define dor_q130  1 "Yes" 2 "No" 7 "Not asked" 8 "Not stated" 
+                       9 "Don't know" ;
+label define live_dwelling 1 "Less than 6 months" 
+                       2 "6 months to less than 1 year" 
+                       3 "1 year to less than 3 years" 
+                       4 "3 years to less than 5 years" 
+                       5 "5 years to less than 10 years" 
+                       6 "10 years and over" 8 "Not stated" 9 "Don't know" ;
+label define live_neigh 1 "Less than 6 months" 
+                       2 "6 months to less than 1 year" 
+                       3 "1 year to less than 3 years" 
+                       4 "3 years to less than 5 years" 
+                       5 "5 years to less than 10 years" 
+                       6 "10 years and over" 8 "Not stated" 9 "Don't know" ;
+label define live_local 1 "Less than 6 months" 
+                       2 "6 months to less than 1 year" 
+                       3 "1 year to less than 3 years" 
+                       4 "3 years to less than 5 years" 
+                       5 "5 years to less than 10 years" 
+                       6 "10 years and over" 8 "Not stated" 9 "Don't know" ;
+label define brthcan   1 "Canada" 2 "Country outside Canada" 8 "Not stated" 
+                       9 "Don't know" ;
+label define brthprvc  1 "Newfoundland and Labrador" 2 "Prince Edward Island" 
+                       3 "Nova Scotia" 4 "New Brunswick" 5 "Quebec" 
+                       6 "Ontario" 7 "Manitoba" 8 "Saskatchewan" 9 "Alberta" 
+                       10 "British Columbia" 
+                       11 "Yukon/Northwest Territories/Nunavut" 
+                       12 "Countries outside Canada" 97 "Not asked" 
+                       98 "Not stated" 99 "Don't know" ;
+label define brthregc  
+                       1 "Born in Canada - province of birth = province of residence" 
+                       2 "Born in Canada - province of birth not equal to province of residence" 
+                       3 "Born in Canada - Province/Territory not stated" 
+                       4 "Born outside Canada - North America (excludes Canada, includes - Greenland, St. Pierre and Miquelon), and Europe" 
+                       5 "Born outside Canada - South/Central America, Caribbean, Africa, Asia, Oceania/other" 
+                       6 "Born outside Canada - country uncodeable" 
+                       7 "Not stated/Don't know which country respondent was born" 
+                       98 "Born outside Canada - Not stated" 
+                       99 "Born outside Canada - Don't know" ;
+label define yrarric   1 "Before 1946" 2 "1946 to 1959" 3 "1960 to 1964" 
+                       4 "1965 to 1969" 5 "1970 to 1974" 6 "1975 to 1979" 
+                       7 "1980 to 1984" 8 "1985 to 1989" 9 "1990 to 1994" 
+                       10 "1995 to 1999" 11 "2000 to 2004" 12 "2005 to 2009" 
+                       13 "2010 to 2011" 
+                       97 "Not asked - Born in Canada/Canadian citizen by birth" 
+                       98 "Not stated" 99 "Don't know" ;
+label define agearrigrc 1 "0 to 4" 2 "5 to 9" 3 "10 to 14" 4 "15 to 19" 
+                       5 "20 to 24" 6 "25 to 29" 7 "30 to 34" 8 "35 to 39" 
+                       9 "40 to 44" 10 "45 to 49" 11 "50 years and over" 
+                       97 "Not asked - Born in Canada/Canadian citizen by birth" 
+                       98 "Not stated" 99 "Don't know" ;
+label define bpr_q50   1 "Yes" 2 "No" 7 "Not asked" 8 "Not stated" 
+                       9 "Don't know" ;
+label define yrlndimm  1 "Before 1946" 2 "1946 to 1955" 3 "1956 to 1960" 
+                       4 "1961 to 1965" 5 "1966 to 1970" 6 "1971 to 1975" 
+                       7 "1976 to 1980" 8 "1981 to 1985" 9 "1986 to 1990" 
+                       10 "1991 to 1995" 11 "1996 to 2000" 12 "2001 to 2005" 
+                       13 "2006 to 2011" 
+                       97 "Not asked - Canadian citizen by birth/non-permanent resident" 
+                       98 "Not stated" 99 "Don't know" ;
+label define agelndimmgrc 1 "0 to 4 years" 2 "5 to 9 years" 3 "10 to 14 years" 
+                       4 "15 to 19 years" 5 "20 to 24 years" 
+                       6 "25 to 29 years" 7 "30 to 34 years" 
+                       8 "35 to 39 years" 9 "40 to 44 years" 
+                       10 "45 to 49 years" 11 "50 years and over" 
+                       97 "Not asked" 98 "Not stated" 99 "Don't know" ;
+label define brthpcan  1 "Canada" 2 "Country outside Canada" 7 "Not asked" 
+                       8 "Not stated" 9 "Don't know" ;
+label define brthpprvc 1 "Newfoundland and Labrador" 2 "Prince Edward Island" 
+                       3 "Nova Scotia" 4 "New Brunswick" 5 "Quebec" 
+                       6 "Ontario" 7 "Manitoba" 8 "Saskatchewan" 9 "Alberta" 
+                       10 "British Columbia" 
+                       11 "Yukon/Northwest Territories/Nunavut" 
+                       12 "Countries outside Canada" 97 "Not asked" 
+                       98 "Not stated" 99 "Don't know" ;
+label define brthpregc 1 "Born in Canada" 
+                       2 "Born outside Canada - North America/Europe" 
+                       3 "Born outside Canada - Other countries" 
+                       4 "Not stated/Don't know which country respondent's spouse/partner was born" 
+                       5 "Born outside Canada - South/Central America, Caribbean, Africa, Asia, Oceania/other" 
+                       7 "Not stated/Don't know which country respondent's spouse//partner was born" 
+                       97 "Not asked" 98 "Born outside Canada - Not stated" 
+                       99 "Born outside Canada - Don't know" ;
+label define visminc   1 "Visible minority" 2 "Not a visible minority" 
+                       8 "Not stated" 9 "Don't know" ;
+label define visminprc 1 "Visible minority" 2 "Not a visible minority" 
+                       7 "Not asked" 8 "Not stated" 9 "Don't know" ;
+label define religatt  1 "At least once a week" 2 "At least once a month" 
+                       3 "A few times a year" 4 "At least once a year" 
+                       5 "Not at all" 8 "Not stated" 9 "Don't know" ;
+label define rlr_q110  1 "...very important?" 2 "...somewhat important?" 
+                       3 "...not very important?" 
+                       4 "...not at all important?" 8 "Not stated" 
+                       9 "Don't know" ;
+label define rlr_q120  1 "At least once a week?" 2 "At least once a month?" 
+                       3 "A few times a year?" 4 "At least once a year?" 
+                       5 "Not at all?" 8 "Not stated" 9 "Don't know" ;
+label define relig6c   1 "No religion" 2 "Roman Catholic" 3 "United Church" 
+                       4 "Protestant" 5 "Other" 8 "Not stated" 9 "Don't know" ;
+label define lanch     1 "English only" 2 "French only" 
+                       3 "Other language only" 4 "English and French equally" 
+                       5 "English and Other equally" 
+                       6 "French and Other equally" 
+                       7 "English, French and Other equally" 98 "Not stated" 
+                       99 "Don't know" ;
+label define lanchsuec 1 "Yes, English still understood" 2 "No" 7 "Not asked" 
+                       8 "Not stated" 9 "Don't know" ;
+label define lanchsuf  1 "Yes, French still understood" 2 "No" 7 "Not asked" 
+                       8 "Not stated" 9 "Don't know" ;
+label define lanchsuo  1 "Yes, Other language still understood" 2 "No" 
+                       7 "Not asked" 8 "Not stated" 9 "Don't know" ;
+label define lanhsdc   1 "English only" 2 "French only" 3 "Other language" 
+                       8 "Not stated" 9 "Don't know" ;
+label define inr_q025  0 "No income" 
+                       1 "Employment including wages, salaries, commissions and tips" 
+                       2 "Self-employment such as unincorporated business, professional practice or farm" 
+                       3 "Investment income (dividends, interest or net rents from real estate)" 
+                       4 "RRSPs or RRIFs (registered retirement income funds)" 
+                       5 "Employment insurance (or Quebec Parental Insurance Plan)" 
+                       6 "Worker's compensation" 
+                       7 "Benefits from Canada or Quebec Pension Plan" 
+                       8 "Retirement pensions, Superannuation and Annuities" 
+                       9 "Basic Old Age Security" 
+                       10 "Guaranteed Income Supplement or Survivor's Allowance (from federal government only)" 
+                       11 "Child Tax Benefit or family allowances" 
+                       12 "Provincial, Territorial or Municipal Social Assistance or Welfare" 
+                       13 "Child Support/Alimony" 14 "Other income" 
+                       98 "Not stated" 99 "Don't know" ;
+label define incmc     1 "No income or loss" 2 "Less than $5,000" 
+                       3 "$5,000 to $9,999" 4 "$10,000 to $14,999" 
+                       5 "$15,000 to $19,999" 6 "$20,000 to $29,999" 
+                       7 "$30,000 to $39,999" 8 "$40,000 to $49,999" 
+                       9 "$50,000 to $59,999" 10 "$60,000 to $79,999" 
+                       11 "$80,000 to $99,999" 12 "$100,000 or more" 
+                       98 "Not stated" 99 "Don't know" ;
+label define incmmemc  0 "No other member" 1 "One member" 2 "Two members" 
+                       3 "Three members or more" 7 "Not asked" 8 "Not stated" 
+                       9 "Don't know" ;
+label define incmhsdc  1 "No income or loss" 2 "Less than $5,000" 
+                       3 "$5,000 to $9,999" 4 "$10,000 to $14,999" 
+                       5 "$15,000 to $19,999" 6 "$20,000 to $29,999" 
+                       7 "$30,000 to $39,999" 8 "$40,000 to $49,999" 
+                       9 "$50,000 to $59,999" 10 "$60,000 to $79,999" 
+                       11 "$80,000 to $99,999" 12 "$100,000 to $149,999" 
+                       13 "$150,000 or more" 98 "Not stated" 99 "Don't know" ;
+
